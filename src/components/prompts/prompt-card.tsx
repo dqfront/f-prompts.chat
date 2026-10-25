@@ -4,6 +4,8 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { getPromptUrl } from "@/lib/urls";
+import { BotCard, promptToBotCardData } from "@/components/bots/bot-card";
+import type { BotPlatform } from "@/lib/bots/schema";
 import { ArrowBigUp, Lock, Copy, ImageIcon, Download, Play, BadgeCheck, Volume2, Link2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { CodeView } from "@/components/ui/code-view";
@@ -32,6 +34,12 @@ export interface PromptCardProps {
     structuredFormat?: string | null;
     mediaUrl: string | null;
     isPrivate: boolean;
+    isFeatured?: boolean;
+    botIcon?: string | null;
+    botColor?: string | null;
+    botPlatforms?: readonly BotPlatform[] | null;
+    botPlatform?: BotPlatform | null;
+    botConfig?: unknown;
     voteCount: number;
     createdAt: Date;
     author: {
@@ -86,7 +94,14 @@ export interface PromptCardProps {
   isPinned?: boolean;
 }
 
-export function PromptCard({ prompt, showPinButton = false, isPinned = false }: PromptCardProps) {
+export function PromptCard(props: PromptCardProps) {
+  if (props.prompt.type === "BOT") {
+    return <BotCard bot={promptToBotCardData(props.prompt)} />;
+  }
+  return <StandardPromptCard {...props} />;
+}
+
+function StandardPromptCard({ prompt, showPinButton = false, isPinned = false }: PromptCardProps) {
   const t = useTranslations("prompts");
   const tCommon = useTranslations("common");
   const _locale = useLocale();

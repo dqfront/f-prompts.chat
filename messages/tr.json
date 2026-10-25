@@ -35,6 +35,7 @@
     "collapseAll": "Tümünü Daralt"
   },
   "nav": {
+    "bots": "Botlar",
     "collection": "Koleksiyonum",
     "feed": "Akış",
     "promptmasters": "Promptmasters",
@@ -194,7 +195,8 @@
       "structured": "Yapılandırılmış",
       "document": "Doküman",
       "skill": "Yetenek",
-      "taste": "Taste"
+      "taste": "Taste",
+      "bot": "Bot"
     },
     "inputType": "Kullanıcı Promptu",
     "outputType": "AI Yanıtı",
@@ -499,6 +501,7 @@
       "tags": "Etiketler",
       "webhooks": "Webhooklar",
       "prompts": "Promptlar",
+      "bots": "Botlar",
       "reports": "Şikayetler"
     },
     "reports": {
@@ -758,6 +761,21 @@
       "generating": "Oluşturuluyor...",
       "generateSuccess": "{count} gömme vektörü oluşturuldu",
       "generateResult": "Oluşturulan: {success}, Başarısız: {failed}"
+    },
+    "botsList": {
+      "title": "Botlar",
+      "description": "Topluluk botlarını yönetin: öne çıkarın, listeden kaldırın, düzenleyin veya silin.",
+      "noBots": "Bot bulunamadı",
+      "open": "Aç",
+      "edit": "Düzenle",
+      "feature": "Öne çıkar",
+      "unfeature": "Öne çıkarmayı kaldır",
+      "unlist": "Listeden kaldır",
+      "relist": "Yeniden listele",
+      "updated": "Bot güncellendi",
+      "deleted": "Bot silindi",
+      "deleteConfirmTitle": "Bot silinsin mi?",
+      "deleteConfirmDescription": "\"{title}\" kalıcı olarak silinecek. Bu işlem geri alınamaz."
     }
   },
   "search": {
@@ -896,6 +914,134 @@
     "noWorkflowsDescription": "Akışlar, diğer promptlara sıralı olarak bağlanan promptlardır. Bir akış oluşturmak için bir prompt oluşturun ve bağlantılar ekleyin.",
     "browsePrompts": "Promptlara Göz At"
   },
+  "bots": {
+    "description": "Talimatları, rutinleri ve becerileriyle hazır yapay zekâ ajan botları. OpenClaw, Hermes Agent veya Grok Bot'a kurun.",
+    "count": "{count, plural, one {# bot} other {# bot}}",
+    "allPlatforms": "Tümü",
+    "noBots": "Bu platform için henüz bot yok.",
+    "scheduledCount": "{count, plural, one {# zamanlanmış rutin} other {# zamanlanmış rutin}}",
+    "eventCount": "{count, plural, one {# olay tetikleyici} other {# olay tetikleyici}}",
+    "backToBots": "Tüm botlar",
+    "instructions": "Talimatlar",
+    "routines": "Rutinler",
+    "noRoutines": "Bu botun rutini yok.",
+    "scheduled": "Zamanlanmış",
+    "eventTriggered": "Olayla tetiklenen",
+    "schedule": "Zamanlama",
+    "trigger": "Tetikleyici",
+    "skills": "Beceriler",
+    "connectors": "Gerekli bağlayıcılar",
+    "install": "Kur",
+    "installOn": "{platform} üzerinde kur",
+    "installLinkComingSoon": "Kurulum bağlantısı yakında",
+    "hermesCommandHint": "Botu tek komutla beceri olarak kurun:",
+    "copyCommand": "Komutu kopyala",
+    "installPromptHint": "Bu istemi ajanınıza yapıştırın. Bot tanımını alır ve talimatları, rutinleri ve becerileri kurar.",
+    "installPromptFallbackHint": "Ya da botu kendiniz oluşturmak için bu istemi Grok Bot'a yapıştırın:",
+    "installPromptPlatformFallbackHint": "Ya da botu kendiniz oluşturmak için bu istemi {platform} içine yapıştırın:",
+    "copyInstallPrompt": "Kurulum istemini kopyala",
+    "machineReadable": "Makine tarafından okunabilir",
+    "create": "Yeni bot",
+    "edit": "Düzenle",
+    "private": "Gizli",
+    "unlisted": "Listelenmemiş",
+    "form": {
+      "createTitle": "Bot oluştur",
+      "editTitle": "Botu düzenle",
+      "name": "Ad",
+      "namePlaceholder": "ör. Günlük Toplantı Raporlayıcı",
+      "platform": "Platform",
+      "platforms": "Platformlar",
+      "platformsHint": "Bu botun çalıştığı tüm platformları seçin.",
+      "platformsRequired": "En az bir platform seçin.",
+      "appearance": "Simge ve renk",
+      "changeAppearance": "Değiştir",
+      "icon": "Simge",
+      "color": "Renk",
+      "defaultColor": "Varsayılan",
+      "resetAppearance": "Varsayılana sıfırla",
+      "description": "Kısa açıklama",
+      "descriptionPlaceholder": "Bu bot ne yapıyor?",
+      "installUrl": "Kurulum URL'si",
+      "installUrlHint": "İsteğe bağlı. Tek tıkla kurulum bağlantısı, örneğin Grok Bot şablonunuzun paylaşım bağlantısı.",
+      "instructionsHint": "Ajan için sistem istemi veya kalıcı talimatlar.",
+      "instructionsPlaceholder": "Sen yardımsever bir asistansın…",
+      "routinesHint": "Botun çalıştırdığı zamanlanmış veya olayla tetiklenen işler.",
+      "routineName": "Rutin adı",
+      "cronPlaceholder": "Cron, ör. 0 8 * * *",
+      "eventPlaceholder": "Olay, ör. Yeni bir issue açıldığında",
+      "triggerLabelPlaceholder": "Okunabilir zamanlama (isteğe bağlı), ör. Her gün 08:00'de",
+      "routinePromptPlaceholder": "Bu rutin çalıştığında bot ne yapmalı?",
+      "addRoutine": "Rutin ekle",
+      "skillsHint": "Botun kullandığı beceriler. Varsa bir kurulum kaynağı ekleyin.",
+      "skillName": "Beceri adı",
+      "skillDescription": "Ne yapar",
+      "skillSourcePlaceholder": "Kurulum kaynağı (isteğe bağlı)",
+      "addSkill": "Beceri ekle",
+      "connectorsPlaceholder": "ör. GitHub, Slack, Telegram",
+      "connectorsHint": "Kullanıcının bağlaması gereken hesaplar veya hizmetler, virgülle ayrılmış.",
+      "remove": "Kaldır",
+      "submit": "Bot oluştur",
+      "save": "Botu kaydet",
+      "created": "Bot oluşturuldu",
+      "updated": "Bot güncellendi"
+    },
+    "colors": {
+      "slate": "Arduvaz",
+      "red": "Kırmızı",
+      "orange": "Turuncu",
+      "amber": "Kehribar",
+      "lime": "Limon yeşili",
+      "emerald": "Zümrüt",
+      "teal": "Deniz mavisi",
+      "sky": "Gök mavisi",
+      "blue": "Mavi",
+      "indigo": "Çivit",
+      "violet": "Mor",
+      "pink": "Pembe"
+    },
+    "icons": {
+      "bot": "Bot",
+      "sparkles": "Pırıltı",
+      "rocket": "Roket",
+      "brain": "Beyin",
+      "zap": "Şimşek",
+      "mail": "Posta",
+      "inbox": "Gelen kutusu",
+      "message-square": "Mesaj",
+      "bell": "Zil",
+      "calendar": "Takvim",
+      "clock": "Saat",
+      "newspaper": "Gazete",
+      "megaphone": "Megafon",
+      "search": "Arama",
+      "radar": "Radar",
+      "globe": "Küre",
+      "plane": "Uçak",
+      "receipt": "Fiş",
+      "wallet": "Cüzdan",
+      "dollar-sign": "Dolar",
+      "chart": "Grafik",
+      "briefcase": "Evrak çantası",
+      "shopping-cart": "Alışveriş sepeti",
+      "code": "Kod",
+      "terminal": "Terminal",
+      "git-branch": "Git dalı",
+      "bug": "Hata",
+      "shield": "Kalkan",
+      "book-open": "Kitap",
+      "graduation-cap": "Mezuniyet kepi",
+      "lightbulb": "Ampul",
+      "wrench": "İngiliz anahtarı",
+      "palette": "Palet",
+      "camera": "Kamera",
+      "music": "Müzik",
+      "heart": "Kalp",
+      "coffee": "Kahve"
+    },
+    "latestBots": "Son Botlar",
+    "viewAll": "Tümünü gör"
+  },
   "collection": {
     "title": "Koleksiyonum",
     "description": "Sonra için kaydettiğiniz promptlar",
@@ -916,9 +1062,9 @@
     "mostContributed": "En Çok Katkı Alanlar"
   },
   "homepage": {
-    "heroTitle": "AI Promptları için Özgür",
+    "heroTitle": "AI Agent'ları için Özgür",
     "heroSubtitle": "Sosyal Platform",
-    "heroDescription": "Promptlar tüm üretken yapay zekanın temelidir. Topluluktan paylaşın, keşfedin ve toplayın. Özgür ve açık kaynak — tam gizlilik ile kendi sunucunuzda barındırın.",
+    "heroDescription": "Promptlar, skill'ler, workflow'lar ve botlar; agent'ların ihtiyaç duyduğu her şey tek yerde. Topluluktan paylaşın, keşfedin, kurun. Özgür ve açık kaynak, dilerseniz tam gizlilikle kendi sunucunuzda barındırın.",
     "heroFeature1": "Özgür & Açık Kaynak",
     "heroFeature2": "Gizlilik için Self-host",
     "heroFeature3": "Ekipler & Organizasyonlar için",
@@ -1251,7 +1397,7 @@
     "interactiveBanner": {
       "badge": "İnteraktif Versiyon Mevcut",
       "title": "Daha Detaylı ve İnteraktif Bir Deneyim mi İstiyorsunuz?",
-      "description": "28 bölüm, uygulamalı alıştırmalar ve gerçek dünya örnekleri içeren kapsamlı interaktif rehberimizle AI prompt yazımında ustalaşın.",
+      "description": "29 bölüm, uygulamalı alıştırmalar ve gerçek dünya örnekleri içeren kapsamlı interaktif rehberimizle AI prompt yazımında ustalaşın.",
       "cta": "İnteraktif Kitabı Oku"
     },
     "generalTips": {
@@ -1720,8 +1866,8 @@
     "title": "İnteraktif Prompt Yazma Kitabı",
     "donate": "Projeyi destekle",
     "subtitle": "Net ve Etkili Promptlar Hazırlamak için İnteraktif Bir Rehber",
-    "metaTitle": "İnteraktif Prompt Yazma Kitabı | Ücretsiz Online AI Prompt Mühendisliği Rehberi",
-    "metaDescription": "Bu ücretsiz, interaktif rehber ile AI prompt mühendisliğinde ustalaşın. ChatGPT promptları, düşünce zinciri muhakemesi, az örnekli öğrenme ve gelişmiş teknikleri öğrenin. Gerçek örneklerle 28+ bölüm.",
+    "metaTitle": "Prompt Mühendisliği Rehberi: İnteraktif Prompt Yazma Kitabı",
+    "metaDescription": "Bu ücretsiz, interaktif rehber ile AI prompt mühendisliğinde ustalaşın. ChatGPT promptları, düşünce zinciri muhakemesi, az örnekli öğrenme ve gelişmiş teknikleri öğrenin. Gerçek örneklerle 29+ bölüm.",
     "interactiveGuideBy": "İnteraktif Rehber - Yazar:",
     "authorIntro": "Merhaba, ben <author>Fatih Kadir Akın</author>. GitHub'daki popüler <repoLink>Awesome ChatGPT Prompts</repoLink> deposunun ve <siteName>prompts.chat</siteName>'in küratörüyüm.",
     "bookDescription": "Bu kapsamlı ve interaktif rehberde, ilgi çekici ve etkili sohbetler sağlayan çarpıcı AI promptları oluşturmak için uzman stratejilerini keşfedeceksiniz. AI modellerinin nasıl çalıştığını anlamaktan prompt zincirleme ve ajantik sistemler gibi gelişmiş tekniklerde ustalaşmaya kadar, bu kitap AI etkileşimlerinizi bir üst seviyeye taşımak için ihtiyacınız olan araçları sağlar.",
@@ -1743,7 +1889,7 @@
       "part4": "Bölüm 4: En İyi Uygulamalar",
       "part5": "Bölüm 5: Kullanım Senaryoları",
       "part6": "Bölüm 6: Sonuç",
-      "chapters": "28 İnteraktif Bölüm"
+      "chapters": "29 İnteraktif Bölüm"
     },
     "startReading": "Okumaya Başla",
     "skipToChapter1": "1. Bölüme Atla",
@@ -1813,7 +1959,8 @@
       "23-research-analysis": "Araştırma ve Analiz",
       "24-future-of-prompting": "Promptingin Geleceği",
       "27-tools-mcp-connectors": "Araçlar, MCP ve Bağlayıcılar",
-      "26-the-harnesses": "Harness’lar"
+      "26-the-harnesses": "Harness’lar",
+      "28-persistent-bots": "Sürekli Çalışan Botlar: Çalışmaya Devam Eden Ajanlar"
     },
     "chapterDescriptions": {
       "00a-preface": "Yazardan kişisel bir not",
@@ -1846,7 +1993,8 @@
       "23-research-analysis": "Veri analizi ve araştırma görevleri",
       "24-future-of-prompting": "Ortaya çıkan trendler ve ileriye bakış",
       "27-tools-mcp-connectors": "Araçlar, MCP ve bağlayıcılar AI’a verilere erişme ve işlem yapma olanağını nasıl sağlar",
-      "26-the-harnesses": "Harness’lar modelleri, promptları, yetenekleri ve araçları nasıl bir araya getirir"
+      "26-the-harnesses": "Harness’lar modelleri, promptları, yetenekleri ve araçları nasıl bir araya getirir",
+      "28-persistent-bots": "Kalıcı botlar çalışmaya devam etmek için hafızayı, rutinleri ve onayları nasıl kullanır"
     },
     "interactive": {
       "tryIt": "Kendiniz Deneyin",
@@ -2252,6 +2400,115 @@
       "nodeJs": "Node.js 24.x",
       "postgresql": "PostgreSQL database",
       "npm": "npm"
+    }
+  },
+  "seo": {
+    "page": "Sayfa {page}",
+    "home": {
+      "title": "prompts.chat - Ücretsiz AI Promptları: ChatGPT, Claude, Gemini",
+      "description": "Eski adıyla Awesome ChatGPT Prompts olan ücretsiz, açık kaynak yapay zeka prompt kütüphanesi. ChatGPT, Claude ve Gemini için binlerce promptu keşfedin ve paylaşın."
+    },
+    "prompts": {
+      "title": "Prompt Kütüphanesi: Ücretsiz ChatGPT ve AI Promptları",
+      "description": "prompts.chat topluluğunun en yeni ücretsiz promptlarına göz atın. Kategori, etiket veya türe göre filtreleyin; ChatGPT, Claude ve Gemini'ye kopyalayıp yapıştırın.",
+      "searchTitle": "“{query}” için arama sonuçları"
+    },
+    "discover": {
+      "title": "En İyi AI Promptlarını Keşfedin: Öne Çıkanlar ve Trendler",
+      "description": "prompts.chat topluluğunun seçtiği öne çıkan, trend ve en çok oy alan AI promptları. Her gün yeni ChatGPT, Claude, Gemini, görsel ve video promptları eklenir.",
+      "heading": "AI Promptlarını Keşfedin"
+    },
+    "categories": {
+      "title": "AI Prompt Kategorileri: Kodlama, Yazarlık, Görsel ve Fazlası",
+      "description": "Ücretsiz yapay zeka promptlarını kategoriye göre keşfedin: kodlama, yazarlık, pazarlama, iş, eğitim, görsel ve video üretimi. Her iş için doğru promptu bulun.",
+      "heading": "Prompt Kategorileri"
+    },
+    "category": {
+      "title": "ChatGPT, Claude ve Gemini için {name} Promptları",
+      "description": "{description} ChatGPT, Claude, Gemini ve diğer yapay zeka araçları için {count} ücretsiz {name} promptuna göz atın.",
+      "fallbackDescription": "ChatGPT, Claude, Gemini ve diğer AI araçları için {count} ücretsiz {name} promptuna göz atın. prompts.chat topluluğundan promptları kopyalayın, uyarlayın ve paylaşın.",
+      "heading": "{name} Promptları"
+    },
+    "tags": {
+      "title": "Etiketlere Göre AI Promptları",
+      "description": "Python ve SQL'den Midjourney ve pazarlamaya kadar ücretsiz AI promptlarını etikete göre keşfedin. Her konu için ChatGPT, Claude, Gemini ve görsel promptları bulun."
+    },
+    "tag": {
+      "title": "{name} Promptları",
+      "description": "{name} etiketli {count} ücretsiz AI promptuna göz atın. ChatGPT, Claude, Gemini ve diğer araçlarla kullanın ya da kendi promptlarınızı prompts.chat'te paylaşın.",
+      "heading": "{name} Promptları"
+    },
+    "skills": {
+      "title": "Ajan Yetenekleri: Claude Code ve AI Ajanları için SKILL.md",
+      "description": "Claude Code, Codex, Cursor ve diğer AI ajanları için ücretsiz, açık kaynak ajan yetenekleri (SKILL.md dosyaları). prompts.chat topluluğu paylaşıyor ve geliştiriyor.",
+      "heading": "Ajan Yetenekleri"
+    },
+    "workflows": {
+      "title": "AI Prompt İş Akışları ve Prompt Zincirleri",
+      "description": "Her adımın bir sonrakini beslediği çok adımlı AI iş akışları ve prompt zincirleri. ChatGPT, Claude, görsel ve video için denenmiş akışları yeniden kullanın.",
+      "heading": "Prompt İş Akışları"
+    },
+    "bots": {
+      "title": "OpenClaw, Hermes ve Grok için Hazır Yapay Zekâ Ajan Botları",
+      "description": "Talimatları, zamanlanmış rutinleri ve becerileri olan hazır yapay zekâ ajan botlarına göz atın ve onları tek tıkla OpenClaw, Hermes Agent veya Grok Bot'a kurun.",
+      "heading": "Botlar"
+    },
+    "taste": {
+      "title": "AI Kodlama Ajanları için Kod Tarzı Profilleri (taste.md)",
+      "description": "Claude Code, Cursor ve Codex gibi AI kodlama ajanlarına tercih ettiğiniz kuralları, framework'leri ve kod yazma tarzınızı öğreten taste.md profillerine göz atın.",
+      "heading": "Kod Tarzı Profilleri"
+    },
+    "promptmasters": {
+      "title": "Promptmasters: En İyi AI Prompt Yazarları",
+      "description": "AI promptlarının aldığı oylara göre sıralanan, prompts.chat'in en iyi prompt mühendisleriyle tanışın. Tüm zamanlar, aylık ve haftalık sıralamaları görün."
+    },
+    "developers": {
+      "title": "Geliştirici Araçları: Prompt Geliştirici, Tokenizer ve Embed",
+      "description": "prompts.chat'in ücretsiz geliştirici araçları: promptları AI ile iyileştirin, token sayın, gömülebilir widget'lar tasarlayın ve IDE tarzı editörde prompt yazın."
+    },
+    "howToWrite": {
+      "title": "Etkili AI Promptları Nasıl Yazılır: İpuçları ve Örnekler",
+      "description": "Rol promptları, değişkenler, yapılandırılmış çıktı ve fazlası için pratik ipuçları, örnekler ve en iyi uygulamalarla etkili AI promptları yazmayı öğrenin."
+    },
+    "kids": {
+      "title": "Çocuklar için Prompt Yazma: Yapay Zekayla Konuşmayı Öğren",
+      "description": "Çocukların yapay zekayla konuşmayı oyun oynayarak öğrendiği ücretsiz bir yol. Robot Promi ile Prompt Diyarı'nda maceraya atıl ve harika promptlar yazmayı öğren."
+    },
+    "support": {
+      "title": "Destek ve SSS"
+    },
+    "apiDocs": {
+      "title": "Prompts API ve MCP Sunucusu Dokümantasyonu",
+      "description": "Ücretsiz prompts.chat API'si ve MCP sunucusuyla yapay zeka promptlarını programatik olarak arayın ve çekin. Uç noktalar, parametreler ve kopyalamaya hazır örnekler."
+    },
+    "selfHosting": {
+      "title": "Kendi Sunucunuzda Barındırma Rehberi",
+      "description": "Özel markalama, temalar ve kimlik doğrulama ile kendi prompts.chat kurulumunuzu yayına alın. Ücretsiz, açık kaynak ve ekipler için hazır."
+    },
+    "privacy": {
+      "title": "Gizlilik Politikası",
+      "description": "prompts.chat'in verilerinizi nasıl topladığı, kullandığı ve koruduğu hakkında bilgi."
+    },
+    "terms": {
+      "title": "Kullanım Koşulları",
+      "description": "prompts.chat'i kullanırken geçerli olan koşullar."
+    },
+    "profile": {
+      "title": "{name} (@{username}) - AI Promptları",
+      "description": "{name} (@{username}) tarafından ücretsiz ve açık kaynak prompt kütüphanesi prompts.chat'te paylaşılan {count} yapay zeka promptuna göz atın."
+    },
+    "bookChapter": {
+      "title": "{chapter} - Prompt Mühendisliği Rehberi"
+    },
+    "promptTypes": {
+      "TEXT": "ChatGPT Promptu",
+      "STRUCTURED": "Yapılandırılmış AI Promptu",
+      "IMAGE": "AI Görsel Promptu",
+      "VIDEO": "AI Video Promptu",
+      "AUDIO": "AI Ses Promptu",
+      "SKILL": "Ajan Yeteneği",
+      "TASTE": "Kod Tarzı Profili",
+      "model": "{model} Promptu"
     }
   }
 }

@@ -144,7 +144,7 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
 
   return (
     <header className="sticky top-[0px] z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className={`flex h-12 items-center gap-4 ${pathname === "/developers" ? "px-4" : "container"}`}>
+      <div className={`flex h-12 items-center gap-2 sm:gap-4 ${pathname === "/developers" ? "px-4" : "container"}`}>
         {/* Mobile menu */}
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
           <SheetTrigger asChild className="md:hidden">
@@ -200,6 +200,13 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
                     </>
                   )}
                   <Link 
+                    href="/bots" 
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                  >
+                    {t("nav.bots")}
+                  </Link>
+                  <Link 
                     href="/prompts" 
                     onClick={() => setMobileMenuOpen(false)}
                     className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
@@ -212,13 +219,6 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
                     className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                   >
                     {t("nav.skills")}
-                  </Link>
-                  <Link 
-                    href="/taste" 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
-                  >
-                    {t("nav.taste")}
                   </Link>
                   <Link 
                     href="/workflows" 
@@ -277,6 +277,13 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
                       </span>
                     </a>
                   )}
+                  <Link 
+                    href="/taste" 
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                  >
+                    {t("nav.taste")}
+                  </Link>
                 </div>
               </nav>
 
@@ -370,6 +377,12 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
             </>
           )}
           <Link
+            href="/bots"
+            className="px-3 py-1.5 rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
+          >
+            {t("nav.bots")}
+          </Link>
+          <Link
             href="/prompts"
             className="px-3 py-1.5 rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
           >
@@ -382,18 +395,12 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
             {t("nav.skills")}
           </Link>
           <Link
-            href="/taste"
-            className="hidden xl:block px-3 py-1.5 rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
-          >
-            {t("nav.taste")}
-          </Link>
-          <Link
             href="/workflows"
             className="hidden xl:block px-3 py-1.5 rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
           >
             {t("nav.workflows")}
           </Link>
-          {/* Categories, Tags, Promptmasters - visible on lg+ screens */}
+          {/* Categories, Tags, Promptmasters, Taste - visible on 2xl+ screens */}
           <Link
             href="/categories"
             className="hidden 2xl:block px-3 py-1.5 rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
@@ -412,6 +419,12 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
           >
             {t("nav.promptmasters")}
           </Link>
+          <Link
+            href="/taste"
+            className="hidden 2xl:block px-3 py-1.5 rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
+          >
+            {t("nav.taste")}
+          </Link>
           {/* Three-dot dropdown for collapsed nav items */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -424,11 +437,6 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
               <DropdownMenuItem asChild className="xl:hidden">
                 <Link href="/skills">
                   {t("nav.skills")}
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild className="xl:hidden">
-                <Link href="/taste">
-                  {t("nav.taste")}
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild className="xl:hidden">
@@ -450,6 +458,11 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
               <DropdownMenuItem asChild>
                 <Link href="/promptmasters">
                   {t("nav.promptmasters")}
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/taste">
+                  {t("nav.taste")}
                 </Link>
               </DropdownMenuItem>
               {!branding.useCloneBranding && (
@@ -485,7 +498,7 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
         <div className="flex-1" />
 
         {/* Right side actions */}
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-0.5 sm:gap-1">
           {/* Book link */}
           {!branding.useCloneBranding && (
             <Button asChild variant="ghost" size="sm" className="hidden 2xl:flex h-8 gap-1.5">
@@ -534,7 +547,7 @@ export function Header({ authProvider = "credentials", allowRegistration = true 
             <Button
               variant="ghost"
               size="icon"
-              className="h-8 w-8"
+              className="hidden sm:flex h-8 w-8"
               asChild
             >
               <a

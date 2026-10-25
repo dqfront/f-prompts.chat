@@ -35,6 +35,7 @@
     "collapseAll": "すべて折りたたむ"
   },
   "nav": {
+    "bots": "ボット",
     "collection": "マイコレクション",
     "feed": "フィード",
     "promptmasters": "Promptmasters",
@@ -194,7 +195,8 @@
       "structured": "構造化",
       "document": "ドキュメント",
       "skill": "スキル",
-      "taste": "Taste"
+      "taste": "Taste",
+      "bot": "ボット"
     },
     "inputType": "ユーザープロンプト",
     "outputType": "AI応答",
@@ -499,6 +501,7 @@
       "tags": "タグ",
       "webhooks": "Webhook",
       "prompts": "プロンプト",
+      "bots": "ボット",
       "reports": "報告"
     },
     "reports": {
@@ -758,6 +761,21 @@
       "generating": "生成中...",
       "generateSuccess": "{count}件の埋め込みを生成しました",
       "generateResult": "成功: {success}, 失敗: {failed}"
+    },
+    "botsList": {
+      "title": "ボット",
+      "description": "コミュニティのボットを管理：おすすめ、限定公開、編集、削除。",
+      "noBots": "ボットが見つかりません",
+      "open": "開く",
+      "edit": "編集",
+      "feature": "おすすめにする",
+      "unfeature": "おすすめを解除",
+      "unlist": "限定公開にする",
+      "relist": "再公開",
+      "updated": "ボットを更新しました",
+      "deleted": "ボットを削除しました",
+      "deleteConfirmTitle": "ボットを削除しますか？",
+      "deleteConfirmDescription": "「{title}」を完全に削除します。元に戻せません。"
     }
   },
   "search": {
@@ -896,6 +914,134 @@
     "noWorkflowsDescription": "ワークフローは、他のプロンプトに順番に接続するプロンプトです。プロンプトを作成し、接続を追加してワークフローを構築してください。",
     "browsePrompts": "プロンプトを見る"
   },
+  "bots": {
+    "description": "指示・ルーティン・スキルを備えたすぐに使える AI エージェントボット。OpenClaw、Hermes Agent、Grok Bot にインストールできます。",
+    "count": "{count, plural, other {# 件のボット}}",
+    "allPlatforms": "すべて",
+    "noBots": "このプラットフォームのボットはまだありません。",
+    "scheduledCount": "{count, plural, other {# 件の定期ルーティン}}",
+    "eventCount": "{count, plural, other {# 件のイベントトリガー}}",
+    "backToBots": "すべてのボット",
+    "instructions": "指示",
+    "routines": "ルーティン",
+    "noRoutines": "このボットにはルーティンがありません。",
+    "scheduled": "定期実行",
+    "eventTriggered": "イベント起動",
+    "schedule": "スケジュール",
+    "trigger": "トリガー",
+    "skills": "スキル",
+    "connectors": "必要なコネクタ",
+    "install": "インストール",
+    "installOn": "{platform} にインストール",
+    "installLinkComingSoon": "インストールリンクは近日公開",
+    "hermesCommandHint": "1 つのコマンドでボットをスキルとしてインストール:",
+    "copyCommand": "コマンドをコピー",
+    "installPromptHint": "このプロンプトをエージェントに貼り付けてください。ボットの定義を取得し、指示・ルーティン・スキルを設定します。",
+    "installPromptFallbackHint": "または、このプロンプトを Grok Bot に貼り付けて自分でボットを作成します:",
+    "installPromptPlatformFallbackHint": "または、このプロンプトを {platform} に貼り付けて自分でボットを作成します:",
+    "copyInstallPrompt": "インストールプロンプトをコピー",
+    "machineReadable": "機械可読",
+    "create": "新しいボット",
+    "edit": "編集",
+    "private": "非公開",
+    "unlisted": "限定公開",
+    "form": {
+      "createTitle": "ボットを作成",
+      "editTitle": "ボットを編集",
+      "name": "名前",
+      "namePlaceholder": "例：デイリースタンドアップ報告",
+      "platform": "プラットフォーム",
+      "platforms": "プラットフォーム",
+      "platformsHint": "このボットが動作するプラットフォームをすべて選択してください。",
+      "platformsRequired": "少なくとも1つのプラットフォームを選択してください。",
+      "appearance": "アイコンと色",
+      "changeAppearance": "変更",
+      "icon": "アイコン",
+      "color": "色",
+      "defaultColor": "デフォルト",
+      "resetAppearance": "デフォルトに戻す",
+      "description": "短い説明",
+      "descriptionPlaceholder": "このボットは何をしますか？",
+      "installUrl": "インストール URL",
+      "installUrlHint": "任意。ワンクリックインストール用のリンク（例：Grok Bot テンプレートの共有リンク）。",
+      "instructionsHint": "エージェントのシステムプロンプトまたは常設の指示。",
+      "instructionsPlaceholder": "あなたは親切なアシスタントで…",
+      "routinesHint": "ボットが実行する定期またはイベント起動のジョブ。",
+      "routineName": "ルーティン名",
+      "cronPlaceholder": "Cron（例：0 8 * * *）",
+      "eventPlaceholder": "イベント（例：新しい issue が作成されたとき）",
+      "triggerLabelPlaceholder": "読みやすいスケジュール（任意、例：毎日 08:00）",
+      "routinePromptPlaceholder": "このルーティンの実行時にボットは何をしますか？",
+      "addRoutine": "ルーティンを追加",
+      "skillsHint": "ボットが使うスキル。インストール元があれば追加してください。",
+      "skillName": "スキル名",
+      "skillDescription": "できること",
+      "skillSourcePlaceholder": "インストール元（任意）",
+      "addSkill": "スキルを追加",
+      "connectorsPlaceholder": "例：GitHub, Slack, Telegram",
+      "connectorsHint": "ユーザーが接続する必要のあるアカウントやサービス（カンマ区切り）。",
+      "remove": "削除",
+      "submit": "ボットを作成",
+      "save": "ボットを保存",
+      "created": "ボットを作成しました",
+      "updated": "ボットを更新しました"
+    },
+    "colors": {
+      "slate": "スレート",
+      "red": "レッド",
+      "orange": "オレンジ",
+      "amber": "アンバー",
+      "lime": "ライム",
+      "emerald": "エメラルド",
+      "teal": "ティール",
+      "sky": "スカイ",
+      "blue": "ブルー",
+      "indigo": "インディゴ",
+      "violet": "バイオレット",
+      "pink": "ピンク"
+    },
+    "icons": {
+      "bot": "ボット",
+      "sparkles": "きらめき",
+      "rocket": "ロケット",
+      "brain": "脳",
+      "zap": "稲妻",
+      "mail": "メール",
+      "inbox": "受信トレイ",
+      "message-square": "メッセージ",
+      "bell": "ベル",
+      "calendar": "カレンダー",
+      "clock": "時計",
+      "newspaper": "新聞",
+      "megaphone": "メガホン",
+      "search": "検索",
+      "radar": "レーダー",
+      "globe": "地球",
+      "plane": "飛行機",
+      "receipt": "レシート",
+      "wallet": "財布",
+      "dollar-sign": "ドル",
+      "chart": "グラフ",
+      "briefcase": "ブリーフケース",
+      "shopping-cart": "ショッピングカート",
+      "code": "コード",
+      "terminal": "ターミナル",
+      "git-branch": "Git ブランチ",
+      "bug": "バグ",
+      "shield": "盾",
+      "book-open": "本",
+      "graduation-cap": "卒業帽",
+      "lightbulb": "電球",
+      "wrench": "レンチ",
+      "palette": "パレット",
+      "camera": "カメラ",
+      "music": "音楽",
+      "heart": "ハート",
+      "coffee": "コーヒー"
+    },
+    "latestBots": "最新のボット",
+    "viewAll": "すべて表示"
+  },
   "collection": {
     "title": "マイコレクション",
     "description": "保存したプロンプト",
@@ -916,9 +1062,9 @@
     "mostContributed": "最も貢献されたプロンプト"
   },
   "homepage": {
-    "heroTitle": "AIプロンプトの自由な",
+    "heroTitle": "AIエージェントの自由な",
     "heroSubtitle": "ソーシャルプラットフォーム",
-    "heroDescription": "プロンプトはすべての生成AIの基盤です。コミュニティから共有、発見、収集しましょう。無料でオープンソース — 完全なプライバシーでセルフホスト。",
+    "heroDescription": "プロンプト、スキル、ワークフロー、ボット。エージェントに必要なものがすべてここに。コミュニティから共有、発見、インストールしましょう。無料でオープンソース、完全なプライバシーでセルフホストも可能。",
     "heroFeature1": "無料 & オープンソース",
     "heroFeature2": "プライバシーのためセルフホスト",
     "heroFeature3": "チーム＆組織向け",
@@ -1251,7 +1397,7 @@
     "interactiveBanner": {
       "badge": "インタラクティブ版が利用可能",
       "title": "より詳細でインタラクティブな体験をお求めですか？",
-      "description": "28章、実践的な演習、実例を含む包括的なインタラクティブガイドで、AIプロンプトをマスターしましょう。",
+      "description": "29章、実践的な演習、実例を含む包括的なインタラクティブガイドで、AIプロンプトをマスターしましょう。",
       "cta": "インタラクティブブックを読む"
     },
     "generalTips": {
@@ -1720,8 +1866,8 @@
     "title": "インタラクティブ・プロンプティングブック",
     "donate": "プロジェクトを支援",
     "subtitle": "明確で効果的なプロンプトを作成するためのインタラクティブガイド",
-    "metaTitle": "インタラクティブ・プロンプティングブック | AIプロンプトエンジニアリング無料オンラインガイド",
-    "metaDescription": "この無料インタラクティブガイドでAIプロンプトエンジニアリングをマスターしましょう。ChatGPTプロンプト、Chain-of-Thought推論、Few-Shot学習、高度なテクニックを学べます。実例付き28以上のチャプター。",
+    "metaTitle": "プロンプトエンジニアリングガイド：インタラクティブ・プロンプティングブック",
+    "metaDescription": "この無料インタラクティブガイドでAIプロンプトエンジニアリングをマスターしましょう。ChatGPTプロンプト、Chain-of-Thought推論、Few-Shot学習、高度なテクニックを学べます。実例付き29以上のチャプター。",
     "interactiveGuideBy": "インタラクティブガイド by",
     "authorIntro": "こんにちは、<author>Fatih Kadir Akın</author>です。GitHubで人気の<repoLink>Awesome ChatGPT Prompts</repoLink>リポジトリと<siteName>prompts.chat</siteName>のキュレーターです。",
     "bookDescription": "この包括的でインタラクティブなガイドでは、魅力的で効果的な会話を生み出す説得力のあるAIプロンプトを作成するための専門家の戦略を発見できます。AIモデルの仕組みの理解から、プロンプトチェーニングやエージェントシステムなどの高度なテクニックの習得まで、この本はAIインタラクションを次のレベルに引き上げるために必要なツールを提供します。",
@@ -1743,7 +1889,7 @@
       "part4": "パート4：ベストプラクティス",
       "part5": "パート5：ユースケース",
       "part6": "パート6：結論",
-      "chapters": "28のインタラクティブチャプター"
+      "chapters": "29のインタラクティブチャプター"
     },
     "startReading": "読み始める",
     "skipToChapter1": "第1章へ",
@@ -1813,7 +1959,8 @@
       "23-research-analysis": "研究と分析",
       "24-future-of-prompting": "プロンプティングの未来",
       "27-tools-mcp-connectors": "ツール、MCP、コネクター",
-      "26-the-harnesses": "ハーネス"
+      "26-the-harnesses": "ハーネス",
+      "28-persistent-bots": "常時稼働ボット：働き続けるエージェント"
     },
     "chapterDescriptions": {
       "00a-preface": "著者からの個人的なメッセージ",
@@ -1846,7 +1993,8 @@
       "23-research-analysis": "データ分析と研究タスク",
       "24-future-of-prompting": "新興トレンドと将来の展望",
       "27-tools-mcp-connectors": "ツール、MCP、コネクターが AI にデータへのアクセスと操作を可能にする仕組み",
-      "26-the-harnesses": "ハーネスがモデル、プロンプト、スキル、ツールをつなぐ仕組み"
+      "26-the-harnesses": "ハーネスがモデル、プロンプト、スキル、ツールをつなぐ仕組み",
+      "28-persistent-bots": "永続的なボットがメモリ、ルーティン、承認を使って働き続ける仕組み"
     },
     "interactive": {
       "tryIt": "自分で試す",
@@ -2241,6 +2389,115 @@
       "nodeJs": "Node.js 24.x",
       "postgresql": "PostgreSQL database",
       "npm": "npm"
+    }
+  },
+  "seo": {
+    "page": "{page}ページ目",
+    "home": {
+      "title": "prompts.chat - ChatGPT・Claude・Gemini向け無料AIプロンプト集",
+      "description": "旧Awesome ChatGPT Promptsの無料オープンソースAIプロンプトライブラリ。ChatGPT、Claude、Geminiなどで使える数千件のプロンプトを見つけて、コピー・共有できます。"
+    },
+    "prompts": {
+      "title": "プロンプトライブラリ：無料のChatGPT・AIプロンプト",
+      "description": "prompts.chatコミュニティの最新の無料プロンプトを一覧で。カテゴリー・タグ・種類で絞り込み、ChatGPT、Claude、Geminiなどにコピー＆ペーストして使えます。",
+      "searchTitle": "「{query}」の検索結果"
+    },
+    "discover": {
+      "title": "おすすめAIプロンプト：注目・トレンド・人気",
+      "description": "prompts.chatコミュニティが選んだ注目・トレンド・高評価のAIプロンプト。ChatGPT、Claude、Gemini、画像・動画生成の新しいプロンプトを毎日更新しています。",
+      "heading": "AIプロンプトを探す"
+    },
+    "categories": {
+      "title": "AIプロンプトのカテゴリー：コーディング・文章・画像など",
+      "description": "コーディング、文章作成、マーケティング、ビジネス、教育、画像・動画生成など、カテゴリー別に無料AIプロンプトを探せます。あらゆるタスクに合うプロンプトが見つかります。",
+      "heading": "プロンプトのカテゴリー"
+    },
+    "category": {
+      "title": "{name}のプロンプト集：ChatGPT・Claude・Gemini対応",
+      "description": "{description} ChatGPT、Claude、GeminiなどのAIツールで使える{name}の無料プロンプトを{count}件掲載しています。",
+      "fallbackDescription": "ChatGPT、Claude、GeminiなどのAIツールで使える{name}の無料プロンプトを{count}件掲載。prompts.chatコミュニティのプロンプトをコピー・カスタマイズ・共有できます。",
+      "heading": "{name}のプロンプト"
+    },
+    "tags": {
+      "title": "タグからAIプロンプトを探す",
+      "description": "Python、SQLからMidjourney、マーケティング、キャリアまで、タグ別に無料AIプロンプトを探せます。ChatGPT、Claude、Gemini、画像生成向けのプロンプトが見つかります。"
+    },
+    "tag": {
+      "title": "{name}のプロンプト",
+      "description": "「{name}」タグが付いた無料AIプロンプト{count}件。ChatGPT、Claude、GeminiなどのAIツールで使えるほか、自作のプロンプトをprompts.chatで共有することもできます。",
+      "heading": "{name}のプロンプト"
+    },
+    "skills": {
+      "title": "エージェントスキル集：Claude Code・AIエージェント向けSKILL.md",
+      "description": "Claude Code、Codex、CursorなどのAIエージェント向けの無料・オープンソースのエージェントスキル（SKILL.mdファイル）。prompts.chatコミュニティが共有・改善しています。",
+      "heading": "エージェントスキル"
+    },
+    "workflows": {
+      "title": "AIプロンプトワークフローとプロンプトチェーン",
+      "description": "各ステップの出力が次のステップにつながる、多段階のAIプロンプトワークフローとプロンプトチェーン。ChatGPT、Claude、画像・動画生成で実績のある手順を再利用できます。",
+      "heading": "プロンプトワークフロー"
+    },
+    "bots": {
+      "title": "OpenClaw・Hermes・Grok 向けのすぐに使える AI エージェントボット",
+      "description": "指示、定期ルーティン、スキルを備えたすぐに使える AI エージェントボットを探して、OpenClaw、Hermes Agent、Grok Bot にワンクリックでインストールできます。",
+      "heading": "ボット"
+    },
+    "taste": {
+      "title": "AIコーディングエージェント向けテイストプロファイル（taste.md）",
+      "description": "Claude Code、Cursor、CodexなどのAIコーディングエージェントに、好みの規約・フレームワーク・コーディングスタイルを教えるtaste.mdプロファイルを探せます。",
+      "heading": "コーディングテイストプロファイル"
+    },
+    "promptmasters": {
+      "title": "Promptmasters：人気AIプロンプトクリエイター",
+      "description": "AIプロンプトが獲得した高評価の数でランク付けされた、prompts.chatのトッププロンプトエンジニアを紹介。総合・月間・週間ランキングをチェックしましょう。"
+    },
+    "developers": {
+      "title": "開発者ツール：プロンプト改善・トークナイザー・埋め込み",
+      "description": "prompts.chatの無料開発者ツール。AIでプロンプトを改善し、トークン数を数え、埋め込み用プロンプトウィジェットをデザインし、IDE風エディターでプロンプトを作成できます。"
+    },
+    "howToWrite": {
+      "title": "効果的なAIプロンプトの書き方：コツと例文",
+      "description": "ロールプロンプト、変数、構造化出力などについて、実践的なコツ・例文・ベストプラクティスを交えながら効果的なAIプロンプトの書き方を学べます。"
+    },
+    "kids": {
+      "title": "子ども向けプロンプト入門：AIと話す方法を学ぼう",
+      "description": "子どもがAIとの話し方をゲーム感覚で学べる無料コンテンツ。ロボットのPromiと一緒にプロンプトランドを冒険して、上手なプロンプトの書き方を身につけよう。"
+    },
+    "support": {
+      "title": "サポート・よくある質問"
+    },
+    "apiDocs": {
+      "title": "プロンプトAPI・MCPサーバー ドキュメント",
+      "description": "prompts.chatの無料APIとMCPサーバーで、AIプロンプトをプログラムから検索・取得できます。エンドポイント、パラメーター、すぐ使えるサンプルコードを掲載。"
+    },
+    "selfHosting": {
+      "title": "セルフホスティングガイド",
+      "description": "独自のブランディング、テーマ、認証を設定して、プライベートなprompts.chatを自分でホストできます。無料・オープンソースでチーム利用にも対応。"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "description": "prompts.chatがお客様のデータをどのように収集・利用・保護するかについて。"
+    },
+    "terms": {
+      "title": "利用規約",
+      "description": "prompts.chatのご利用に適用される規約です。"
+    },
+    "profile": {
+      "title": "{name} (@{username}) - AIプロンプト",
+      "description": "{name} (@{username}) さんがprompts.chatで公開しているAIプロンプト{count}件。prompts.chatは無料・オープンソースのプロンプトライブラリです。"
+    },
+    "bookChapter": {
+      "title": "{chapter} - プロンプトエンジニアリングガイド"
+    },
+    "promptTypes": {
+      "TEXT": "ChatGPTプロンプト",
+      "STRUCTURED": "構造化AIプロンプト",
+      "IMAGE": "AI画像生成プロンプト",
+      "VIDEO": "AI動画生成プロンプト",
+      "AUDIO": "AI音声プロンプト",
+      "SKILL": "エージェントスキル",
+      "TASTE": "コーディングテイスト",
+      "model": "{model}プロンプト"
     }
   }
 }

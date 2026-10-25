@@ -6,12 +6,13 @@ import { db } from "@/lib/db";
 import { generatePromptEmbedding, findAndSaveRelatedPrompts } from "@/lib/ai/embeddings";
 import { generatePromptSlug } from "@/lib/slug";
 import { checkPromptQuality } from "@/lib/ai/quality-check";
+import { BOT_PLATFORMS, botColorSchema, botConfigSchema, botIconSchema, botPlatformsData, botPlatformsSchema, installUrlSchema } from "@/lib/bots/schema";
 
 const updatePromptSchema = z.object({
   title: z.string().min(1).max(200).optional(),
   description: z.string().max(500).optional(),
   content: z.string().min(1).optional(),
-  type: z.enum(["TEXT", "IMAGE", "VIDEO", "AUDIO", "SKILL", "TASTE"]).optional(), // Output type, SKILL, or TASTE
+  type: z.enum(["TEXT", "IMAGE", "VIDEO", "AUDIO", "SKILL", "TASTE", "BOT"]).optional(), // Output type, SKILL, TASTE, or BOT
   structuredFormat: z.enum(["JSON", "YAML"]).optional().nullable(),
   categoryId: z.string().optional().nullable(),
   tagIds: z.array(z.string()).optional(),
@@ -27,6 +28,14 @@ const updatePromptSchema = z.object({
     tools: z.array(z.string()).optional(),
   })).optional(),
   workflowLink: z.string().url().optional().or(z.literal("")).nullable(),
+  // BOT prompts only
+  botPlatforms: botPlatformsSchema.optional(),
+  /** Deprecated single-platform alias for botPlatforms */
+  botPlatform: z.enum(BOT_PLATFORMS).optional(),
+  botIcon: botIconSchema.nullish().or(z.literal("")),
+  botColor: botColorSchema.nullish().or(z.literal("")),
+  installUrl: installUrlSchema.optional().or(z.literal("")).nullable(),
+  botConfig: botConfigSchema.optional(),
 });
 
 // Get single prompt
@@ -99,11 +108,8 @@ export async function GET(
       hasVoted = !!vote;
     }
 
-    // Omit embedding from response (it's large binary data)
-    const { embedding: _embedding, ...promptWithoutEmbedding } = prompt;
-
     return NextResponse.json({
-      ...promptWithoutEmbedding,
+      ...prompt,
       voteCount: prompt._count.votes,
       hasVoted,
     });
@@ -162,7 +168,8 @@ export async function PATCH(
       );
     }
 
-    const { tagIds, contributorIds, categoryId, mediaUrl, title, bestWithModels, bestWithMCP, workflowLink, ...data } = parsed.data;
+    const { tagIds, contributorIds, categoryId, mediaUrl, title, bestWithModels, bestWithMCP, workflowLink, installUrl, botPlatforms, botPlatform, botIcon, botColor, ...data } = parsed.data;
+    const nextBotPlatforms = botPlatforms ?? (botPlatform ? [botPlatform] : undefined);
 
     // Regenerate slug if title changed
     let newSlug: string | undefined;
@@ -180,6 +187,10 @@ export async function PATCH(
       ...(bestWithModels !== undefined && { bestWithModels }),
       ...(bestWithMCP !== undefined && { bestWithMCP }),
       ...(workflowLink !== undefined && { workflowLink: workflowLink || null }),
+      ...(installUrl !== undefined && { installUrl: installUrl || null }),
+      ...(nextBotPlatforms && botPlatformsData(nextBotPlatforms)),
+      ...(botIcon !== undefined && { botIcon: botIcon || null }),
+      ...(botColor !== undefined && { botColor: botColor || null }),
     };
 
     // Update prompt

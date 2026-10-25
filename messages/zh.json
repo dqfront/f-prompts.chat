@@ -35,6 +35,7 @@
     "collapseAll": "全部折叠"
   },
   "nav": {
+    "bots": "机器人",
     "collection": "我的收藏",
     "feed": "动态",
     "promptmasters": "Promptmasters",
@@ -194,7 +195,8 @@
       "structured": "结构化",
       "document": "文档",
       "skill": "技能",
-      "taste": "Taste"
+      "taste": "Taste",
+      "bot": "机器人"
     },
     "inputType": "用户提示词",
     "outputType": "AI 响应",
@@ -499,6 +501,7 @@
       "tags": "标签",
       "webhooks": "Webhooks",
       "prompts": "提示词",
+      "bots": "机器人",
       "reports": "举报"
     },
     "reports": {
@@ -758,6 +761,21 @@
       "generating": "生成中...",
       "generateSuccess": "{count} 个嵌入生成成功",
       "generateResult": "成功：{success}，失败：{failed}"
+    },
+    "botsList": {
+      "title": "机器人",
+      "description": "管理社区机器人：推荐、取消列出、编辑或删除。",
+      "noBots": "未找到机器人",
+      "open": "打开",
+      "edit": "编辑",
+      "feature": "推荐",
+      "unfeature": "取消推荐",
+      "unlist": "取消列出",
+      "relist": "重新列出",
+      "updated": "机器人已更新",
+      "deleted": "机器人已删除",
+      "deleteConfirmTitle": "删除机器人？",
+      "deleteConfirmDescription": "这将永久删除“{title}”，且无法撤销。"
     }
   },
   "search": {
@@ -896,6 +914,134 @@
     "noWorkflowsDescription": "工作流程是按顺序连接到其他提示词的提示词。创建一个提示词并添加连接以构建工作流程。",
     "browsePrompts": "浏览提示词"
   },
+  "bots": {
+    "description": "现成的 AI 智能体机器人，包含指令、例行任务和技能。可安装到 OpenClaw、Hermes Agent 或 Grok Bot。",
+    "count": "{count, plural, other {# 个机器人}}",
+    "allPlatforms": "全部",
+    "noBots": "该平台暂无机器人。",
+    "scheduledCount": "{count, plural, other {# 个定时任务}}",
+    "eventCount": "{count, plural, other {# 个事件触发}}",
+    "backToBots": "所有机器人",
+    "instructions": "指令",
+    "routines": "例行任务",
+    "noRoutines": "该机器人没有例行任务。",
+    "scheduled": "定时",
+    "eventTriggered": "事件触发",
+    "schedule": "计划",
+    "trigger": "触发条件",
+    "skills": "技能",
+    "connectors": "所需连接器",
+    "install": "安装",
+    "installOn": "安装到 {platform}",
+    "installLinkComingSoon": "安装链接即将推出",
+    "hermesCommandHint": "一条命令即可将机器人安装为技能：",
+    "copyCommand": "复制命令",
+    "installPromptHint": "将此提示粘贴到你的智能体中。它会获取机器人定义并设置指令、例行任务和技能。",
+    "installPromptFallbackHint": "或者将此提示粘贴到 Grok Bot 中自行创建机器人：",
+    "installPromptPlatformFallbackHint": "或者将此提示词粘贴到 {platform} 中自行创建机器人：",
+    "copyInstallPrompt": "复制安装提示",
+    "machineReadable": "机器可读",
+    "create": "新建机器人",
+    "edit": "编辑",
+    "private": "私密",
+    "unlisted": "未列出",
+    "form": {
+      "createTitle": "创建机器人",
+      "editTitle": "编辑机器人",
+      "name": "名称",
+      "namePlaceholder": "例如：每日站会汇报员",
+      "platform": "平台",
+      "platforms": "平台",
+      "platformsHint": "选择此机器人支持的所有平台。",
+      "platformsRequired": "请至少选择一个平台。",
+      "appearance": "图标和颜色",
+      "changeAppearance": "更改",
+      "icon": "图标",
+      "color": "颜色",
+      "defaultColor": "默认",
+      "resetAppearance": "恢复默认",
+      "description": "简短描述",
+      "descriptionPlaceholder": "这个机器人做什么？",
+      "installUrl": "安装链接",
+      "installUrlHint": "可选。一键安装链接，例如你的 Grok Bot 模板分享链接。",
+      "instructionsHint": "智能体的系统提示或常驻指令。",
+      "instructionsPlaceholder": "你是一个乐于助人的助手，…",
+      "routinesHint": "机器人运行的定时或事件触发任务。",
+      "routineName": "任务名称",
+      "cronPlaceholder": "Cron，例如 0 8 * * *",
+      "eventPlaceholder": "事件，例如：有新的 issue 被创建时",
+      "triggerLabelPlaceholder": "可读的计划（可选），例如：每天 08:00",
+      "routinePromptPlaceholder": "该任务运行时机器人应该做什么？",
+      "addRoutine": "添加任务",
+      "skillsHint": "机器人使用的技能。如有安装来源请一并填写。",
+      "skillName": "技能名称",
+      "skillDescription": "功能说明",
+      "skillSourcePlaceholder": "安装来源（可选）",
+      "addSkill": "添加技能",
+      "connectorsPlaceholder": "例如 GitHub、Slack、Telegram",
+      "connectorsHint": "用户需要连接的账号或服务，用逗号分隔。",
+      "remove": "移除",
+      "submit": "创建机器人",
+      "save": "保存机器人",
+      "created": "机器人已创建",
+      "updated": "机器人已更新"
+    },
+    "colors": {
+      "slate": "石板灰",
+      "red": "红色",
+      "orange": "橙色",
+      "amber": "琥珀色",
+      "lime": "青柠色",
+      "emerald": "翡翠绿",
+      "teal": "青色",
+      "sky": "天蓝色",
+      "blue": "蓝色",
+      "indigo": "靛蓝色",
+      "violet": "紫罗兰色",
+      "pink": "粉色"
+    },
+    "icons": {
+      "bot": "机器人",
+      "sparkles": "闪光",
+      "rocket": "火箭",
+      "brain": "大脑",
+      "zap": "闪电",
+      "mail": "邮件",
+      "inbox": "收件箱",
+      "message-square": "消息",
+      "bell": "铃铛",
+      "calendar": "日历",
+      "clock": "时钟",
+      "newspaper": "报纸",
+      "megaphone": "扩音器",
+      "search": "搜索",
+      "radar": "雷达",
+      "globe": "地球",
+      "plane": "飞机",
+      "receipt": "收据",
+      "wallet": "钱包",
+      "dollar-sign": "美元",
+      "chart": "图表",
+      "briefcase": "公文包",
+      "shopping-cart": "购物车",
+      "code": "代码",
+      "terminal": "终端",
+      "git-branch": "Git 分支",
+      "bug": "错误",
+      "shield": "盾牌",
+      "book-open": "书籍",
+      "graduation-cap": "学位帽",
+      "lightbulb": "灯泡",
+      "wrench": "扳手",
+      "palette": "调色板",
+      "camera": "相机",
+      "music": "音乐",
+      "heart": "爱心",
+      "coffee": "咖啡"
+    },
+    "latestBots": "最新机器人",
+    "viewAll": "查看全部"
+  },
   "collection": {
     "title": "我的收藏",
     "description": "您保存的提示词",
@@ -916,9 +1062,9 @@
     "mostContributed": "贡献最多"
   },
   "homepage": {
-    "heroTitle": "AI 提示词的自由",
+    "heroTitle": "AI 智能体的自由",
     "heroSubtitle": "社交平台",
-    "heroDescription": "提示词是所有生成式AI的基础。从社区分享、发现和收集它们。免费开源 — 自托管享有完全隐私。",
+    "heroDescription": "提示词、技能、工作流程和机器人：智能体所需的一切，尽在一处。从社区分享、发现和安装。免费开源，可自托管，享有完全隐私。",
     "heroFeature1": "免费 & 开源",
     "heroFeature2": "自托管保护隐私",
     "heroFeature3": "适用于团队和组织",
@@ -1251,7 +1397,7 @@
     "interactiveBanner": {
       "badge": "互动版本已上线",
       "title": "想要更详细的互动体验？",
-      "description": "通过我们包含28章内容、实践练习和真实案例的综合互动指南，深入掌握AI提示词技巧。",
+      "description": "通过我们包含29章内容、实践练习和真实案例的综合互动指南，深入掌握AI提示词技巧。",
       "cta": "阅读互动电子书"
     },
     "generalTips": {
@@ -1720,8 +1866,8 @@
     "title": "互动提示词工程之书",
     "donate": "支持项目",
     "subtitle": "创建清晰有效提示词的互动指南",
-    "metaTitle": "互动提示词工程之书 | AI提示词工程免费在线指南",
-    "metaDescription": "通过这本免费互动指南掌握AI提示词工程。学习ChatGPT提示词、思维链推理、少样本学习和高级技术。28+章节配有真实示例。",
+    "metaTitle": "提示词工程指南：互动提示词工程之书",
+    "metaDescription": "通过这本免费互动指南掌握AI提示词工程。学习ChatGPT提示词、思维链推理、少样本学习和高级技术。29+章节配有真实示例。",
     "interactiveGuideBy": "互动指南 by",
     "authorIntro": "你好，我是<author>Fatih Kadir Akın</author>，GitHub上热门<repoLink>Awesome ChatGPT Prompts</repoLink>仓库和<siteName>prompts.chat</siteName>的策展人。",
     "bookDescription": "在这本全面的互动指南中，你将发现创建引人入胜的AI提示词的专家策略，这些提示词能够产生有效的对话。从理解AI模型的工作原理到掌握提示词链和代理系统等高级技术，这本书为你提供了将AI交互提升到新水平所需的工具。",
@@ -1743,7 +1889,7 @@
       "part4": "第4部分：最佳实践",
       "part5": "第5部分：用例",
       "part6": "第6部分：结论",
-      "chapters": "28个互动章节"
+      "chapters": "29个互动章节"
     },
     "startReading": "开始阅读",
     "skipToChapter1": "跳至第1章",
@@ -1813,7 +1959,8 @@
       "23-research-analysis": "研究和分析",
       "24-future-of-prompting": "提示词工程的未来",
       "27-tools-mcp-connectors": "工具、MCP 与连接器",
-      "26-the-harnesses": "运行框架（Harnesses）"
+      "26-the-harnesses": "运行框架（Harnesses）",
+      "28-persistent-bots": "常驻机器人：持续工作的智能体"
     },
     "chapterDescriptions": {
       "00a-preface": "作者的个人说明",
@@ -1846,7 +1993,8 @@
       "23-research-analysis": "数据分析和研究任务",
       "24-future-of-prompting": "新兴趋势和未来展望",
       "27-tools-mcp-connectors": "工具、MCP 和连接器如何让 AI 访问数据并执行操作",
-      "26-the-harnesses": "运行框架如何连接模型、提示词、技能和工具"
+      "26-the-harnesses": "运行框架如何连接模型、提示词、技能和工具",
+      "28-persistent-bots": "持久机器人如何利用记忆、例行任务和审批持续工作"
     },
     "interactive": {
       "tryIt": "自己试试",
@@ -2241,6 +2389,115 @@
       "nodeJs": "Node.js 24.x",
       "postgresql": "PostgreSQL database",
       "npm": "npm"
+    }
+  },
+  "seo": {
+    "page": "第{page}页",
+    "home": {
+      "title": "prompts.chat - 免费AI提示词库：ChatGPT、Claude、Gemini",
+      "description": "免费开源的AI提示词库，前身为Awesome ChatGPT Prompts。发现、复制并分享数千条适用于ChatGPT、Claude、Gemini等AI工具的提示词，覆盖写作、编程、绘图等各类场景。"
+    },
+    "prompts": {
+      "title": "提示词库：免费ChatGPT与AI提示词大全",
+      "description": "浏览prompts.chat社区最新发布的免费提示词。可按分类、标签或类型筛选，一键复制到ChatGPT、Claude、Gemini等AI工具中直接使用。",
+      "searchTitle": "“{query}”的搜索结果"
+    },
+    "discover": {
+      "title": "发现优质AI提示词：精选与热门",
+      "description": "汇集prompts.chat社区精选、热门及高赞的AI提示词，每日更新，涵盖ChatGPT、Claude、Gemini以及图像和视频生成等方向的最新提示词。",
+      "heading": "发现AI提示词"
+    },
+    "categories": {
+      "title": "AI提示词分类：编程、写作、图像等",
+      "description": "按分类浏览免费AI提示词：编程、写作、营销、商业、教育、图像与视频生成等，轻松为每项任务找到合适的提示词，复制即可使用。",
+      "heading": "提示词分类"
+    },
+    "category": {
+      "title": "{name}提示词：适用于ChatGPT、Claude和Gemini",
+      "description": "{description} 浏览{count}条免费{name}提示词，适用于ChatGPT、Claude、Gemini等AI工具。",
+      "fallbackDescription": "浏览{count}条免费{name}提示词，适用于ChatGPT、Claude、Gemini等AI工具。复制、修改并分享来自prompts.chat社区的提示词。",
+      "heading": "{name}提示词"
+    },
+    "tags": {
+      "title": "按标签浏览AI提示词",
+      "description": "按标签浏览免费AI提示词，涵盖Python、SQL、Midjourney、营销、职场等主题，轻松找到适用于ChatGPT、Claude、Gemini和图像生成的提示词。"
+    },
+    "tag": {
+      "title": "{name}提示词",
+      "description": "浏览{count}条标签为“{name}”的免费AI提示词，可用于ChatGPT、Claude、Gemini等AI工具，也欢迎在prompts.chat分享你的提示词。",
+      "heading": "{name}提示词"
+    },
+    "skills": {
+      "title": "智能体技能库：Claude Code等AI智能体的SKILL.md",
+      "description": "浏览免费开源的智能体技能（SKILL.md文件），适用于Claude Code、Codex、Cursor等AI智能体，由prompts.chat社区共享和持续完善。",
+      "heading": "智能体技能"
+    },
+    "workflows": {
+      "title": "AI提示词工作流与提示词链",
+      "description": "探索多步骤AI提示词工作流和提示词链，每一步的输出都会作为下一步的输入。复用经过验证的流程，用于ChatGPT、Claude以及图像和视频生成。",
+      "heading": "提示词工作流"
+    },
+    "bots": {
+      "title": "适用于 OpenClaw、Hermes 和 Grok 的现成 AI 智能体机器人",
+      "description": "浏览包含指令、定时任务和技能的现成 AI 智能体机器人，一键安装到 OpenClaw、Hermes Agent 或 Grok Bot。",
+      "heading": "机器人"
+    },
+    "taste": {
+      "title": "编码风格档案（taste.md）：适用于AI编程智能体",
+      "description": "浏览taste.md档案，让Claude Code、Cursor、Codex等AI编程智能体掌握你偏好的编码规范、常用框架和代码风格，写出更符合你习惯的代码。",
+      "heading": "编码风格档案"
+    },
+    "promptmasters": {
+      "title": "Promptmasters：顶尖AI提示词创作者",
+      "description": "认识prompts.chat上的顶尖提示词工程师，按其AI提示词获得的点赞数排名。查看历史总榜、月榜和周榜，发现最受欢迎的提示词创作者。"
+    },
+    "developers": {
+      "title": "开发者工具：提示词优化、Token计数与嵌入组件",
+      "description": "prompts.chat免费开发者工具：用AI优化提示词、统计Token数量、设计可嵌入的提示词组件，并在IDE风格的编辑器中构建提示词。"
+    },
+    "howToWrite": {
+      "title": "如何写出高效的AI提示词：技巧与示例",
+      "description": "通过实用技巧、示例和最佳实践，系统学习如何写出高效的AI提示词，内容涵盖角色提示词、变量、结构化输出等常用技巧。"
+    },
+    "kids": {
+      "title": "儿童提示词课堂：学会与AI对话",
+      "description": "一款免费的游戏化课程，让孩子在玩乐中学会与AI对话。跟着机器人Promi一起闯荡提示词王国，一步步学会写出精彩的提示词。"
+    },
+    "support": {
+      "title": "支持与常见问题"
+    },
+    "apiDocs": {
+      "title": "提示词API与MCP服务器文档",
+      "description": "通过prompts.chat免费API和MCP服务器，以编程方式搜索和获取AI提示词。文档包含接口端点、参数说明以及可直接复制使用的示例代码。"
+    },
+    "selfHosting": {
+      "title": "自托管指南",
+      "description": "部署属于你自己的私有prompts.chat实例，支持自定义品牌、主题和身份验证。完全免费开源，开箱即用，适合团队内部部署与使用。"
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "description": "prompts.chat如何收集、使用和保护你的数据。"
+    },
+    "terms": {
+      "title": "服务条款",
+      "description": "使用prompts.chat时适用的条款。"
+    },
+    "profile": {
+      "title": "{name} (@{username}) - AI提示词",
+      "description": "浏览{name} (@{username}) 在prompts.chat分享的{count}条AI提示词。prompts.chat是免费开源的提示词库。"
+    },
+    "bookChapter": {
+      "title": "{chapter} - 提示词工程指南"
+    },
+    "promptTypes": {
+      "TEXT": "ChatGPT提示词",
+      "STRUCTURED": "结构化AI提示词",
+      "IMAGE": "AI绘图提示词",
+      "VIDEO": "AI视频提示词",
+      "AUDIO": "AI音频提示词",
+      "SKILL": "智能体技能",
+      "TASTE": "编码风格档案",
+      "model": "{model}提示词"
     }
   }
 }

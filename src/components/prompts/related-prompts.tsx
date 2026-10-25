@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import { ArrowBigUp } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { getPromptUrl } from "@/lib/urls";
+import { getBotUrl, getPromptUrl } from "@/lib/urls";
 
 interface RelatedPrompt {
   id: string;
@@ -41,20 +41,20 @@ export function RelatedPrompts({ prompts }: RelatedPromptsProps) {
   return (
     <div className="mt-8 space-y-4">
       <div className="flex items-center gap-2">
-        <h3 className="font-semibold">{t("relatedPrompts")}</h3>
+        <h2 className="font-semibold">{t("relatedPrompts")}</h2>
       </div>
       <div className="grid gap-3 grid-cols-1 sm:grid-cols-2">
         {prompts.map((prompt) => (
           <Link
             key={prompt.id}
-            href={getPromptUrl(prompt.id, prompt.slug)}
+            href={prompt.type === "BOT" ? getBotUrl(prompt.id, prompt.slug) : getPromptUrl(prompt.id, prompt.slug)}
             className="group border rounded-[var(--radius)] p-4 hover:border-foreground/20 transition-colors flex flex-col"
           >
             {/* Header */}
             <div className="flex items-start justify-between gap-2 mb-2">
-              <h4 className="font-medium text-sm line-clamp-1 group-hover:underline">
+              <h3 className="font-medium text-sm line-clamp-1 group-hover:underline">
                 {prompt.title}
-              </h4>
+              </h3>
               <Badge variant="outline" className="text-[10px] shrink-0">
                 {t(`types.${prompt.type.toLowerCase()}`)}
               </Badge>

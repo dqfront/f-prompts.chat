@@ -35,6 +35,7 @@
     "collapseAll": "Collapse All"
   },
   "nav": {
+    "bots": "Bots",
     "collection": "My Collection",
     "feed": "Feed",
     "promptmasters": "Promptmasters",
@@ -194,7 +195,8 @@
       "structured": "Structured",
       "document": "Document",
       "skill": "Skill",
-      "taste": "Taste"
+      "taste": "Taste",
+      "bot": "Bot"
     },
     "inputType": "User Prompt",
     "outputType": "AI Response",
@@ -499,6 +501,7 @@
       "tags": "Tags",
       "webhooks": "Webhooks",
       "prompts": "Prompts",
+      "bots": "Bots",
       "reports": "Reports"
     },
     "reports": {
@@ -758,6 +761,21 @@
       "generating": "Generating...",
       "generateSuccess": "{count} embeddings generated",
       "generateResult": "Generated: {success}, Failed: {failed}"
+    },
+    "botsList": {
+      "title": "Bots",
+      "description": "Manage community bots: feature, unlist, edit or delete them.",
+      "noBots": "No bots found",
+      "open": "Open",
+      "edit": "Edit",
+      "feature": "Feature",
+      "unfeature": "Unfeature",
+      "unlist": "Unlist",
+      "relist": "Relist",
+      "updated": "Bot updated",
+      "deleted": "Bot deleted",
+      "deleteConfirmTitle": "Delete bot?",
+      "deleteConfirmDescription": "This permanently deletes \"{title}\". This cannot be undone."
     }
   },
   "search": {
@@ -896,6 +914,134 @@
     "noWorkflowsDescription": "Workflows are prompts that connect to other prompts in a sequence. Create a prompt and add connections to build a workflow.",
     "browsePrompts": "Browse Prompts"
   },
+  "bots": {
+    "description": "Ready-made AI agent bots with instructions, routines and skills. Install them on OpenClaw, Hermes Agent or Grok Bot.",
+    "count": "{count, plural, one {# bot} other {# bots}}",
+    "allPlatforms": "All",
+    "noBots": "No bots for this platform yet.",
+    "scheduledCount": "{count, plural, one {# scheduled routine} other {# scheduled routines}}",
+    "eventCount": "{count, plural, one {# event trigger} other {# event triggers}}",
+    "backToBots": "All bots",
+    "instructions": "Instructions",
+    "routines": "Routines",
+    "noRoutines": "This bot has no routines.",
+    "scheduled": "Scheduled",
+    "eventTriggered": "Event-triggered",
+    "schedule": "Schedule",
+    "trigger": "Trigger",
+    "skills": "Skills",
+    "connectors": "Required connectors",
+    "install": "Install",
+    "installOn": "Install on {platform}",
+    "installLinkComingSoon": "Install link coming soon",
+    "hermesCommandHint": "Install the bot as a skill with one command:",
+    "copyCommand": "Copy command",
+    "installPromptHint": "Paste this prompt into your agent. It fetches the bot definition and sets up the instructions, routines and skills.",
+    "installPromptFallbackHint": "Or paste this prompt into Grok Bot to create the bot yourself:",
+    "installPromptPlatformFallbackHint": "Or paste this prompt into {platform} to create the bot yourself:",
+    "copyInstallPrompt": "Copy install prompt",
+    "machineReadable": "Machine-readable",
+    "create": "New bot",
+    "edit": "Edit",
+    "private": "Private",
+    "unlisted": "Unlisted",
+    "form": {
+      "createTitle": "Create a bot",
+      "editTitle": "Edit bot",
+      "name": "Name",
+      "namePlaceholder": "e.g. Daily Standup Reporter",
+      "platform": "Platform",
+      "platforms": "Platforms",
+      "platformsHint": "Select every platform this bot works on.",
+      "platformsRequired": "Select at least one platform.",
+      "appearance": "Icon & color",
+      "changeAppearance": "Change",
+      "icon": "Icon",
+      "color": "Color",
+      "defaultColor": "Default",
+      "resetAppearance": "Reset to default",
+      "description": "Short description",
+      "descriptionPlaceholder": "What does this bot do?",
+      "installUrl": "Install URL",
+      "installUrlHint": "Optional. A one-click install link, for example the share link of your Grok Bot template.",
+      "instructionsHint": "The system prompt or standing instructions for the agent.",
+      "instructionsPlaceholder": "You are a helpful assistant that…",
+      "routinesHint": "Scheduled or event-triggered jobs the bot runs.",
+      "routineName": "Routine name",
+      "cronPlaceholder": "Cron, e.g. 0 8 * * *",
+      "eventPlaceholder": "Event, e.g. When a new issue is opened",
+      "triggerLabelPlaceholder": "Readable schedule (optional), e.g. Every day at 08:00",
+      "routinePromptPlaceholder": "What should the bot do when this routine runs?",
+      "addRoutine": "Add routine",
+      "skillsHint": "Skills the bot uses. Add an install source if it has one.",
+      "skillName": "Skill name",
+      "skillDescription": "What it does",
+      "skillSourcePlaceholder": "Install source (optional)",
+      "addSkill": "Add skill",
+      "connectorsPlaceholder": "e.g. GitHub, Slack, Telegram",
+      "connectorsHint": "Accounts or services the user has to connect, separated by commas.",
+      "remove": "Remove",
+      "submit": "Create bot",
+      "save": "Save bot",
+      "created": "Bot created",
+      "updated": "Bot updated"
+    },
+    "colors": {
+      "slate": "Slate",
+      "red": "Red",
+      "orange": "Orange",
+      "amber": "Amber",
+      "lime": "Lime",
+      "emerald": "Emerald",
+      "teal": "Teal",
+      "sky": "Sky",
+      "blue": "Blue",
+      "indigo": "Indigo",
+      "violet": "Violet",
+      "pink": "Pink"
+    },
+    "icons": {
+      "bot": "Bot",
+      "sparkles": "Sparkles",
+      "rocket": "Rocket",
+      "brain": "Brain",
+      "zap": "Lightning",
+      "mail": "Mail",
+      "inbox": "Inbox",
+      "message-square": "Message",
+      "bell": "Bell",
+      "calendar": "Calendar",
+      "clock": "Clock",
+      "newspaper": "Newspaper",
+      "megaphone": "Megaphone",
+      "search": "Search",
+      "radar": "Radar",
+      "globe": "Globe",
+      "plane": "Plane",
+      "receipt": "Receipt",
+      "wallet": "Wallet",
+      "dollar-sign": "Dollar",
+      "chart": "Chart",
+      "briefcase": "Briefcase",
+      "shopping-cart": "Shopping cart",
+      "code": "Code",
+      "terminal": "Terminal",
+      "git-branch": "Git branch",
+      "bug": "Bug",
+      "shield": "Shield",
+      "book-open": "Book",
+      "graduation-cap": "Graduation cap",
+      "lightbulb": "Light bulb",
+      "wrench": "Wrench",
+      "palette": "Palette",
+      "camera": "Camera",
+      "music": "Music",
+      "heart": "Heart",
+      "coffee": "Coffee"
+    },
+    "latestBots": "Latest Bots",
+    "viewAll": "View all"
+  },
   "collection": {
     "title": "My Collection",
     "description": "Prompts you've saved for later",
@@ -917,8 +1063,8 @@
   },
   "homepage": {
     "heroTitle": "The Free Social Platform for",
-    "heroSubtitle": "AI Prompts",
-    "heroDescription": "Prompts are the foundation of all generative AI. Share, discover, and collect them from the community. Free and open source — self-host with complete privacy.",
+    "heroSubtitle": "AI Agents",
+    "heroDescription": "Prompts, skills, workflows and bots: everything your agents need, in one place. Share, discover, and install from the community. Free and open source, self-host with complete privacy.",
     "heroFeature1": "Free & Open Source",
     "heroFeature2": "Self-host for Privacy",
     "heroFeature3": "For Teams & Organizations",
@@ -1251,7 +1397,7 @@
     "interactiveBanner": {
       "badge": "Interactive Version Available",
       "title": "Want a More Detailed & Interactive Experience?",
-      "description": "Dive deeper with our comprehensive interactive guide featuring 28 chapters, hands-on exercises, and real-world examples to master AI prompting.",
+      "description": "Dive deeper with our comprehensive interactive guide featuring 29 chapters, hands-on exercises, and real-world examples to master AI prompting.",
       "cta": "Read the Interactive Book"
     },
     "generalTips": {
@@ -1720,8 +1866,8 @@
     "title": "The Interactive Book of Prompting",
     "donate": "Support the project",
     "subtitle": "An Interactive Guide to Crafting Clear and Effective Prompts",
-    "metaTitle": "The Interactive Book of Prompting | Free Online Guide to AI Prompt Engineering",
-    "metaDescription": "Master AI prompt engineering with this free, interactive guide. Learn ChatGPT prompts, chain-of-thought reasoning, few-shot learning, and advanced techniques. 28+ chapters with real examples.",
+    "metaTitle": "Prompt Engineering Guide: The Interactive Book of Prompting",
+    "metaDescription": "Master AI prompt engineering with this free, interactive guide. Learn ChatGPT prompts, chain-of-thought reasoning, few-shot learning, and advanced techniques. 29+ chapters with real examples.",
     "interactiveGuideBy": "An Interactive Guide by",
     "authorIntro": "Hi, I'm <author>Fatih Kadir Akın</author>, the curator of the popular <repoLink>Awesome ChatGPT Prompts</repoLink> repository on GitHub and <siteName>prompts.chat</siteName>.",
     "bookDescription": "In this comprehensive and interactive guide, you'll discover expert strategies for crafting compelling AI prompts that drive engaging and effective conversations. From understanding how AI models work to mastering advanced techniques like prompt chaining and agentic systems, this book provides you with the tools you need to take your AI interactions to the next level.",
@@ -1743,7 +1889,7 @@
       "part4": "Part 4: Best Practices",
       "part5": "Part 5: Use Cases",
       "part6": "Part 6: Conclusion",
-      "chapters": "28 Interactive Chapters"
+      "chapters": "29 Interactive Chapters"
     },
     "startReading": "Start Reading",
     "skipToChapter1": "Skip to Chapter 1",
@@ -1813,7 +1959,8 @@
       "23-research-analysis": "Research & Analysis",
       "24-future-of-prompting": "The Future of Prompting",
       "27-tools-mcp-connectors": "Tools, MCP and Connectors",
-      "26-the-harnesses": "The Harnesses"
+      "26-the-harnesses": "The Harnesses",
+      "28-persistent-bots": "Always-On Bots: Agents That Keep Working"
     },
     "chapterDescriptions": {
       "00a-preface": "A personal note from the author",
@@ -1846,7 +1993,8 @@
       "23-research-analysis": "Data analysis and research tasks",
       "24-future-of-prompting": "Emerging trends and looking ahead",
       "27-tools-mcp-connectors": "How tools, MCP, and connectors give AI access to data and actions",
-      "26-the-harnesses": "How harnesses connect models, prompts, skills, and tools"
+      "26-the-harnesses": "How harnesses connect models, prompts, skills, and tools",
+      "28-persistent-bots": "How persistent bots use memory, routines, and approvals to keep working"
     },
     "interactive": {
       "tryIt": "Try It Yourself",
@@ -2257,6 +2405,115 @@
       "nodeJs": "Node.js 24.x",
       "postgresql": "PostgreSQL database",
       "npm": "npm"
+    }
+  },
+  "seo": {
+    "page": "Page {page}",
+    "home": {
+      "title": "prompts.chat - Free AI Prompts for ChatGPT, Claude & Gemini",
+      "description": "Free, open-source AI prompts library, formerly Awesome ChatGPT Prompts. Discover, copy and share thousands of prompts for ChatGPT, Claude, Gemini and more."
+    },
+    "prompts": {
+      "title": "Prompt Library: Browse Free ChatGPT & AI Prompts",
+      "description": "Browse the newest free prompts from the prompts.chat community. Filter by category, tag or type, then copy and paste them into ChatGPT, Claude, Gemini and more.",
+      "searchTitle": "Search results for \"{query}\""
+    },
+    "discover": {
+      "title": "Discover the Best AI Prompts: Featured & Trending",
+      "description": "Featured, trending and most-upvoted AI prompts picked by the prompts.chat community, updated daily with new ChatGPT, Claude, Gemini, image and video prompts.",
+      "heading": "Discover AI Prompts"
+    },
+    "categories": {
+      "title": "AI Prompt Categories: Coding, Writing, Images & More",
+      "description": "Explore free AI prompts by category: coding, writing, marketing, business, education, image and video generation and more. Find the right prompt for any task.",
+      "heading": "Prompt Categories"
+    },
+    "category": {
+      "title": "{name} Prompts for ChatGPT, Claude & Gemini",
+      "description": "{description} Browse {count} free {name} prompts for ChatGPT, Claude, Gemini and other AI tools.",
+      "fallbackDescription": "Browse {count} free {name} prompts for ChatGPT, Claude, Gemini and other AI tools. Copy, customize and share prompts from the prompts.chat community.",
+      "heading": "{name} Prompts"
+    },
+    "tags": {
+      "title": "Browse AI Prompts by Tag",
+      "description": "Browse free AI prompts by tag, from Python and SQL to Midjourney, marketing and careers. Find ChatGPT, Claude, Gemini and image prompts for any topic."
+    },
+    "tag": {
+      "title": "{name} Prompts",
+      "description": "Browse {count} free AI prompts tagged {name}. Copy and use them with ChatGPT, Claude, Gemini and other AI tools, or share your own on prompts.chat.",
+      "heading": "{name} Prompts"
+    },
+    "skills": {
+      "title": "Agent Skills Library: SKILL.md for Claude Code & AI Agents",
+      "description": "Browse free, open-source agent skills (SKILL.md files) for Claude Code, Codex, Cursor and other AI agents, shared and improved by the prompts.chat community.",
+      "heading": "Agent Skills"
+    },
+    "workflows": {
+      "title": "AI Prompt Workflows & Prompt Chains",
+      "description": "Explore multi-step AI prompt workflows and prompt chains where each step feeds the next. Reuse proven sequences for ChatGPT, Claude, image and video generation.",
+      "heading": "Prompt Workflows"
+    },
+    "bots": {
+      "title": "Ready-Made AI Agent Bots for OpenClaw, Hermes & Grok",
+      "description": "Browse ready-made AI agent bots with instructions, scheduled routines and skills, and install them on OpenClaw, Hermes Agent or Grok Bot in one click.",
+      "heading": "Bots"
+    },
+    "taste": {
+      "title": "Coding Taste Profiles (taste.md) for AI Coding Agents",
+      "description": "Browse taste.md profiles that teach AI coding agents like Claude Code, Cursor and Codex your preferred conventions, frameworks and coding style.",
+      "heading": "Coding Taste Profiles"
+    },
+    "promptmasters": {
+      "title": "Promptmasters: Top AI Prompt Creators",
+      "description": "Meet the top prompt engineers on prompts.chat, ranked by the upvotes their AI prompts receive. See the all-time, monthly and weekly leaderboards."
+    },
+    "developers": {
+      "title": "Developer Tools: Prompt Enhancer, Tokenizer & Embeds",
+      "description": "Free developer tools from prompts.chat: enhance prompts with AI, count tokens, design embeddable prompt widgets and build prompts in an IDE-style editor."
+    },
+    "howToWrite": {
+      "title": "How to Write Effective AI Prompts: Tips & Examples",
+      "description": "Learn how to write effective AI prompts with practical tips, examples and best practices for role prompts, variables, structured output and more."
+    },
+    "kids": {
+      "title": "Prompting for Kids: Learn to Talk to AI",
+      "description": "A free, game-based way for kids to learn how to talk to AI. Join Promi the robot on an adventure through Prompt Land and learn to write great prompts."
+    },
+    "support": {
+      "title": "Support & FAQ"
+    },
+    "apiDocs": {
+      "title": "Prompts API & MCP Server Documentation",
+      "description": "Search and fetch AI prompts programmatically with the free prompts.chat API and MCP server. Endpoints, parameters and copy-ready examples."
+    },
+    "selfHosting": {
+      "title": "Self-Hosting Guide",
+      "description": "Deploy your own private prompts.chat instance with custom branding, themes and authentication. Free, open source and ready for teams."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How prompts.chat collects, uses and protects your data."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "The terms that apply when you use prompts.chat."
+    },
+    "profile": {
+      "title": "{name} (@{username}) - AI Prompts",
+      "description": "Browse {count} AI prompts shared by {name} (@{username}) on prompts.chat, the free and open-source prompt library."
+    },
+    "bookChapter": {
+      "title": "{chapter} - Prompt Engineering Guide"
+    },
+    "promptTypes": {
+      "TEXT": "ChatGPT Prompt",
+      "STRUCTURED": "Structured AI Prompt",
+      "IMAGE": "AI Image Prompt",
+      "VIDEO": "AI Video Prompt",
+      "AUDIO": "AI Audio Prompt",
+      "SKILL": "Agent Skill",
+      "TASTE": "Coding Taste Profile",
+      "model": "{model} Prompt"
     }
   }
 }

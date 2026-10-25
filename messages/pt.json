@@ -35,6 +35,7 @@
     "collapseAll": "Recolher Tudo"
   },
   "nav": {
+    "bots": "Bots",
     "collection": "Minha Coleção",
     "feed": "Feed",
     "promptmasters": "Promptmasters",
@@ -194,7 +195,8 @@
       "structured": "Estruturado",
       "document": "Documento",
       "skill": "Habilidade",
-      "taste": "Taste"
+      "taste": "Taste",
+      "bot": "Bot"
     },
     "inputType": "Prompt do Usuário",
     "outputType": "Resposta da IA",
@@ -499,6 +501,7 @@
       "tags": "Tags",
       "webhooks": "Webhooks",
       "prompts": "Prompts",
+      "bots": "Bots",
       "reports": "Denúncias"
     },
     "reports": {
@@ -758,6 +761,21 @@
       "generating": "Gerando...",
       "generateSuccess": "{count} embeddings gerados",
       "generateResult": "Gerados: {success}, Falhas: {failed}"
+    },
+    "botsList": {
+      "title": "Bots",
+      "description": "Gerencie os bots da comunidade: destaque, remova da listagem, edite ou exclua.",
+      "noBots": "Nenhum bot encontrado",
+      "open": "Abrir",
+      "edit": "Editar",
+      "feature": "Destacar",
+      "unfeature": "Remover destaque",
+      "unlist": "Remover da listagem",
+      "relist": "Listar novamente",
+      "updated": "Bot atualizado",
+      "deleted": "Bot excluído",
+      "deleteConfirmTitle": "Excluir bot?",
+      "deleteConfirmDescription": "Isto exclui \"{title}\" permanentemente. Não é possível desfazer."
     }
   },
   "search": {
@@ -896,6 +914,134 @@
     "noWorkflowsDescription": "Fluxos de trabalho são prompts que se conectam a outros prompts em sequência. Crie um prompt e adicione conexões para construir um fluxo de trabalho.",
     "browsePrompts": "Explorar Prompts"
   },
+  "bots": {
+    "description": "Bots de agentes de IA prontos, com instruções, rotinas e habilidades. Instale no OpenClaw, Hermes Agent ou Grok Bot.",
+    "count": "{count, plural, one {# bot} other {# bots}}",
+    "allPlatforms": "Todos",
+    "noBots": "Ainda não há bots para esta plataforma.",
+    "scheduledCount": "{count, plural, one {# rotina agendada} other {# rotinas agendadas}}",
+    "eventCount": "{count, plural, one {# gatilho de evento} other {# gatilhos de eventos}}",
+    "backToBots": "Todos os bots",
+    "instructions": "Instruções",
+    "routines": "Rotinas",
+    "noRoutines": "Este bot não tem rotinas.",
+    "scheduled": "Agendada",
+    "eventTriggered": "Acionada por evento",
+    "schedule": "Agendamento",
+    "trigger": "Gatilho",
+    "skills": "Habilidades",
+    "connectors": "Conectores necessários",
+    "install": "Instalar",
+    "installOn": "Instalar no {platform}",
+    "installLinkComingSoon": "Link de instalação em breve",
+    "hermesCommandHint": "Instale o bot como habilidade com um único comando:",
+    "copyCommand": "Copiar comando",
+    "installPromptHint": "Cole este prompt no seu agente. Ele busca a definição do bot e configura as instruções, rotinas e habilidades.",
+    "installPromptFallbackHint": "Ou cole este prompt no Grok Bot para criar o bot você mesmo:",
+    "installPromptPlatformFallbackHint": "Ou cole este prompt no {platform} para criar o bot você mesmo:",
+    "copyInstallPrompt": "Copiar prompt de instalação",
+    "machineReadable": "Legível por máquina",
+    "create": "Novo bot",
+    "edit": "Editar",
+    "private": "Privado",
+    "unlisted": "Não listado",
+    "form": {
+      "createTitle": "Criar um bot",
+      "editTitle": "Editar bot",
+      "name": "Nome",
+      "namePlaceholder": "ex.: Relator do standup diário",
+      "platform": "Plataforma",
+      "platforms": "Plataformas",
+      "platformsHint": "Selecione todas as plataformas em que este bot funciona.",
+      "platformsRequired": "Selecione pelo menos uma plataforma.",
+      "appearance": "Ícone e cor",
+      "changeAppearance": "Alterar",
+      "icon": "Ícone",
+      "color": "Cor",
+      "defaultColor": "Padrão",
+      "resetAppearance": "Redefinir para o padrão",
+      "description": "Descrição curta",
+      "descriptionPlaceholder": "O que este bot faz?",
+      "installUrl": "URL de instalação",
+      "installUrlHint": "Opcional. Um link de instalação em um clique, por exemplo o link de compartilhamento do seu template do Grok Bot.",
+      "instructionsHint": "O prompt de sistema ou as instruções permanentes do agente.",
+      "instructionsPlaceholder": "Você é um assistente útil que…",
+      "routinesHint": "Tarefas agendadas ou acionadas por eventos que o bot executa.",
+      "routineName": "Nome da rotina",
+      "cronPlaceholder": "Cron, ex.: 0 8 * * *",
+      "eventPlaceholder": "Evento, ex.: Quando um novo issue é aberto",
+      "triggerLabelPlaceholder": "Agendamento legível (opcional), ex.: Todos os dias às 08:00",
+      "routinePromptPlaceholder": "O que o bot deve fazer quando esta rotina for executada?",
+      "addRoutine": "Adicionar rotina",
+      "skillsHint": "Habilidades que o bot usa. Adicione uma fonte de instalação, se houver.",
+      "skillName": "Nome da habilidade",
+      "skillDescription": "O que faz",
+      "skillSourcePlaceholder": "Fonte de instalação (opcional)",
+      "addSkill": "Adicionar habilidade",
+      "connectorsPlaceholder": "ex.: GitHub, Slack, Telegram",
+      "connectorsHint": "Contas ou serviços que o usuário precisa conectar, separados por vírgulas.",
+      "remove": "Remover",
+      "submit": "Criar bot",
+      "save": "Salvar bot",
+      "created": "Bot criado",
+      "updated": "Bot atualizado"
+    },
+    "colors": {
+      "slate": "Ardósia",
+      "red": "Vermelho",
+      "orange": "Laranja",
+      "amber": "Âmbar",
+      "lime": "Lima",
+      "emerald": "Esmeralda",
+      "teal": "Verde-azulado",
+      "sky": "Céu",
+      "blue": "Azul",
+      "indigo": "Índigo",
+      "violet": "Violeta",
+      "pink": "Rosa"
+    },
+    "icons": {
+      "bot": "Bot",
+      "sparkles": "Brilhos",
+      "rocket": "Foguete",
+      "brain": "Cérebro",
+      "zap": "Raio",
+      "mail": "E-mail",
+      "inbox": "Caixa de entrada",
+      "message-square": "Mensagem",
+      "bell": "Sino",
+      "calendar": "Calendário",
+      "clock": "Relógio",
+      "newspaper": "Jornal",
+      "megaphone": "Megafone",
+      "search": "Pesquisar",
+      "radar": "Radar",
+      "globe": "Globo",
+      "plane": "Avião",
+      "receipt": "Recibo",
+      "wallet": "Carteira",
+      "dollar-sign": "Dólar",
+      "chart": "Gráfico",
+      "briefcase": "Pasta",
+      "shopping-cart": "Carrinho de compras",
+      "code": "Código",
+      "terminal": "Terminal",
+      "git-branch": "Branch do Git",
+      "bug": "Bug",
+      "shield": "Escudo",
+      "book-open": "Livro",
+      "graduation-cap": "Capelo",
+      "lightbulb": "Lâmpada",
+      "wrench": "Chave inglesa",
+      "palette": "Paleta",
+      "camera": "Câmera",
+      "music": "Música",
+      "heart": "Coração",
+      "coffee": "Café"
+    },
+    "latestBots": "Bots mais recentes",
+    "viewAll": "Ver todos"
+  },
   "collection": {
     "title": "Minha Coleção",
     "description": "Prompts que você salvou para depois",
@@ -917,8 +1063,8 @@
   },
   "homepage": {
     "heroTitle": "A Plataforma Social Livre para",
-    "heroSubtitle": "Prompts de IA",
-    "heroDescription": "Prompts são a base de toda IA generativa. Compartilhe, descubra e colecione da comunidade. Gratuito e open source — hospede você mesmo com total privacidade.",
+    "heroSubtitle": "Agentes de IA",
+    "heroDescription": "Prompts, habilidades, fluxos de trabalho e bots: tudo o que seus agentes precisam, em um só lugar. Compartilhe, descubra e instale a partir da comunidade. Gratuito e open source, hospede você mesmo com total privacidade.",
     "heroFeature1": "Gratuito & Open Source",
     "heroFeature2": "Auto-hospede para Privacidade",
     "heroFeature3": "Para Equipes & Organizações",
@@ -1251,7 +1397,7 @@
     "interactiveBanner": {
       "badge": "Versão Interativa Disponível",
       "title": "Quer uma Experiência Mais Detalhada e Interativa?",
-      "description": "Aprofunde-se com nosso guia interativo completo com 28 capítulos, exercícios práticos e exemplos do mundo real para dominar prompts de IA.",
+      "description": "Aprofunde-se com nosso guia interativo completo com 29 capítulos, exercícios práticos e exemplos do mundo real para dominar prompts de IA.",
       "cta": "Ler o Livro Interativo"
     },
     "generalTips": {
@@ -1720,8 +1866,8 @@
     "title": "O Livro Interativo de Prompting",
     "donate": "Apoie o projeto",
     "subtitle": "Um Guia Interativo para Criar Prompts Claros e Eficazes",
-    "metaTitle": "O Livro Interativo de Prompting | Guia Gratuito Online de Engenharia de Prompts IA",
-    "metaDescription": "Domine a engenharia de prompts IA com este guia interativo gratuito. Aprenda prompts do ChatGPT, raciocínio chain-of-thought, few-shot learning e técnicas avançadas. 28+ capítulos com exemplos reais.",
+    "metaTitle": "Guia de engenharia de prompts: O Livro Interativo de Prompting",
+    "metaDescription": "Domine a engenharia de prompts IA com este guia interativo gratuito. Aprenda prompts do ChatGPT, raciocínio chain-of-thought, few-shot learning e técnicas avançadas. 29+ capítulos com exemplos reais.",
     "interactiveGuideBy": "Um Guia Interativo de",
     "authorIntro": "Olá, sou <author>Fatih Kadir Akın</author>, o curador do popular repositório <repoLink>Awesome ChatGPT Prompts</repoLink> no GitHub e do <siteName>prompts.chat</siteName>.",
     "bookDescription": "Neste guia completo e interativo, você descobrirá estratégias especializadas para criar prompts de IA convincentes que geram conversações envolventes e eficazes. Desde entender como os modelos de IA funcionam até dominar técnicas avançadas como prompt chaining e sistemas agênticos, este livro fornece as ferramentas que você precisa para levar suas interações com IA ao próximo nível.",
@@ -1743,7 +1889,7 @@
       "part4": "Parte 4: Melhores Práticas",
       "part5": "Parte 5: Casos de Uso",
       "part6": "Parte 6: Conclusão",
-      "chapters": "28 Capítulos Interativos"
+      "chapters": "29 Capítulos Interativos"
     },
     "startReading": "Começar a Ler",
     "skipToChapter1": "Ir para o Capítulo 1",
@@ -1813,7 +1959,8 @@
       "23-research-analysis": "Pesquisa e Análise",
       "24-future-of-prompting": "O Futuro do Prompting",
       "27-tools-mcp-connectors": "Ferramentas, MCP e conectores",
-      "26-the-harnesses": "Os harnesses"
+      "26-the-harnesses": "Os harnesses",
+      "28-persistent-bots": "Bots sempre ativos: agentes que continuam trabalhando"
     },
     "chapterDescriptions": {
       "00a-preface": "Uma nota pessoal do autor",
@@ -1846,7 +1993,8 @@
       "23-research-analysis": "Análise de dados e tarefas de pesquisa",
       "24-future-of-prompting": "Tendências emergentes e perspectivas futuras",
       "27-tools-mcp-connectors": "Como ferramentas, MCP e conectores dão à IA acesso a dados e ações",
-      "26-the-harnesses": "Como os harnesses conectam modelos, prompts, habilidades e ferramentas"
+      "26-the-harnesses": "Como os harnesses conectam modelos, prompts, habilidades e ferramentas",
+      "28-persistent-bots": "Como bots persistentes usam memória, rotinas e aprovações para continuar trabalhando"
     },
     "interactive": {
       "tryIt": "Experimente Você Mesmo",
@@ -2255,6 +2403,115 @@
       "nodeJs": "Node.js 24.x",
       "postgresql": "PostgreSQL database",
       "npm": "npm"
+    }
+  },
+  "seo": {
+    "page": "Página {page}",
+    "home": {
+      "title": "prompts.chat - Prompts grátis para ChatGPT, Claude e Gemini",
+      "description": "Biblioteca de prompts de IA gratuita e open source, antiga Awesome ChatGPT Prompts. Descubra, copie e compartilhe milhares de prompts para ChatGPT, Claude e Gemini."
+    },
+    "prompts": {
+      "title": "Biblioteca de prompts: prompts grátis para ChatGPT e IA",
+      "description": "Veja os prompts gratuitos mais recentes da comunidade prompts.chat. Filtre por categoria, tag ou tipo e cole no ChatGPT, Claude, Gemini e em outras IAs.",
+      "searchTitle": "Resultados da busca por “{query}”"
+    },
+    "discover": {
+      "title": "Descubra os melhores prompts de IA: destaques e tendências",
+      "description": "Prompts de IA em destaque, em alta e mais votados pela comunidade prompts.chat, com novos prompts todos os dias para ChatGPT, Claude, Gemini, imagem e vídeo.",
+      "heading": "Descubra Prompts de IA"
+    },
+    "categories": {
+      "title": "Categorias de prompts de IA: código, escrita, imagens e mais",
+      "description": "Prompts de IA grátis por categoria: programação, escrita, marketing, negócios, educação, geração de imagens e vídeos. Encontre o prompt certo para cada tarefa.",
+      "heading": "Categorias de Prompts"
+    },
+    "category": {
+      "title": "Prompts de {name} para ChatGPT, Claude e Gemini",
+      "description": "{description} Veja {count} prompts de {name} grátis para ChatGPT, Claude, Gemini e outras ferramentas de IA.",
+      "fallbackDescription": "Veja {count} prompts de {name} grátis para ChatGPT, Claude, Gemini e outras ferramentas de IA. Copie, personalize e compartilhe prompts da comunidade prompts.chat.",
+      "heading": "Prompts de {name}"
+    },
+    "tags": {
+      "title": "Prompts de IA por tag",
+      "description": "Explore prompts de IA grátis por tag, de Python e SQL a Midjourney, marketing e carreira. Prompts para ChatGPT, Claude, Gemini e imagens sobre qualquer assunto."
+    },
+    "tag": {
+      "title": "Prompts de {name}",
+      "description": "Veja {count} prompts de IA grátis com a tag {name}. Use no ChatGPT, Claude, Gemini e em outras ferramentas de IA, ou compartilhe os seus no prompts.chat.",
+      "heading": "Prompts de {name}"
+    },
+    "skills": {
+      "title": "Habilidades de agente: SKILL.md para Claude Code e IA",
+      "description": "Habilidades de agente grátis e open source (arquivos SKILL.md) para Claude Code, Codex, Cursor e outros agentes de IA, compartilhadas pela comunidade prompts.chat.",
+      "heading": "Habilidades de Agente"
+    },
+    "workflows": {
+      "title": "Fluxos de trabalho e cadeias de prompts de IA",
+      "description": "Fluxos de IA em várias etapas e cadeias de prompts em que cada etapa alimenta a seguinte. Reutilize sequências testadas para ChatGPT, Claude, imagem e vídeo.",
+      "heading": "Fluxos de Trabalho de Prompts"
+    },
+    "bots": {
+      "title": "Bots de agentes de IA prontos para OpenClaw, Hermes e Grok",
+      "description": "Explore bots de agentes de IA prontos, com instruções, rotinas agendadas e habilidades, e instale-os no OpenClaw, Hermes Agent ou Grok Bot com um clique.",
+      "heading": "Bots"
+    },
+    "taste": {
+      "title": "Perfis de estilo de código (taste.md) para agentes de IA",
+      "description": "Veja perfis taste.md que ensinam a agentes de programação com IA, como Claude Code, Cursor e Codex, suas convenções, frameworks e estilo de código preferidos.",
+      "heading": "Perfis de Estilo de Código"
+    },
+    "promptmasters": {
+      "title": "Promptmasters: os melhores criadores de prompts de IA",
+      "description": "Conheça os melhores engenheiros de prompt do prompts.chat, classificados pelos votos em seus prompts de IA. Veja os rankings geral, mensal e semanal."
+    },
+    "developers": {
+      "title": "Ferramentas dev: melhorador de prompts, tokenizer e embeds",
+      "description": "Ferramentas grátis do prompts.chat para desenvolvedores: melhore prompts com IA, conte tokens, crie widgets incorporáveis e monte prompts em um editor estilo IDE."
+    },
+    "howToWrite": {
+      "title": "Como escrever prompts de IA eficazes: dicas e exemplos",
+      "description": "Aprenda a escrever prompts de IA eficazes com dicas práticas, exemplos e boas práticas para prompts de persona, variáveis, saída estruturada e muito mais."
+    },
+    "kids": {
+      "title": "Prompting para crianças: aprenda a conversar com a IA",
+      "description": "Um jogo gratuito para as crianças aprenderem a conversar com a IA. Viaje com o robô Promi pela Terra dos Prompts e aprenda a escrever prompts incríveis."
+    },
+    "support": {
+      "title": "Suporte e perguntas frequentes"
+    },
+    "apiDocs": {
+      "title": "Documentação da API de prompts e do servidor MCP",
+      "description": "Busque e obtenha prompts de IA via código com a API gratuita e o servidor MCP do prompts.chat. Endpoints, parâmetros e exemplos prontos para copiar."
+    },
+    "selfHosting": {
+      "title": "Guia de auto-hospedagem",
+      "description": "Implante sua própria instância privada do prompts.chat com marca, temas e autenticação personalizados. Gratuito, open source e pronto para equipes."
+    },
+    "privacy": {
+      "title": "Política de Privacidade",
+      "description": "Como o prompts.chat coleta, usa e protege seus dados."
+    },
+    "terms": {
+      "title": "Termos de Serviço",
+      "description": "Os termos que se aplicam ao uso do prompts.chat."
+    },
+    "profile": {
+      "title": "{name} (@{username}) - Prompts de IA",
+      "description": "Veja {count} prompts de IA compartilhados por {name} (@{username}) no prompts.chat, a biblioteca de prompts gratuita e open source."
+    },
+    "bookChapter": {
+      "title": "{chapter} - Guia de engenharia de prompts"
+    },
+    "promptTypes": {
+      "TEXT": "Prompt para ChatGPT",
+      "STRUCTURED": "Prompt de IA estruturado",
+      "IMAGE": "Prompt de imagem com IA",
+      "VIDEO": "Prompt de vídeo com IA",
+      "AUDIO": "Prompt de áudio com IA",
+      "SKILL": "Habilidade de agente",
+      "TASTE": "Perfil de estilo de código",
+      "model": "Prompt para {model}"
     }
   }
 }

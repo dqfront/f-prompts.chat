@@ -35,6 +35,7 @@
     "collapseAll": "Alle einklappen"
   },
   "nav": {
+    "bots": "Bots",
     "collection": "Meine Sammlung",
     "feed": "Feed",
     "promptmasters": "Promptmasters",
@@ -194,7 +195,8 @@
       "structured": "Strukturiert",
       "document": "Dokument",
       "skill": "Skill",
-      "taste": "Taste"
+      "taste": "Taste",
+      "bot": "Bot"
     },
     "inputType": "Benutzer-Prompt",
     "outputType": "KI-Antwort",
@@ -499,6 +501,7 @@
       "tags": "Tags",
       "webhooks": "Webhooks",
       "prompts": "Prompts",
+      "bots": "Bots",
       "reports": "Meldungen"
     },
     "reports": {
@@ -758,6 +761,21 @@
       "generating": "Generiere...",
       "generateSuccess": "{count} Embeddings generiert",
       "generateResult": "Generiert: {success}, Fehlgeschlagen: {failed}"
+    },
+    "botsList": {
+      "title": "Bots",
+      "description": "Community-Bots verwalten: hervorheben, aus Listen entfernen, bearbeiten oder löschen.",
+      "noBots": "Keine Bots gefunden",
+      "open": "Öffnen",
+      "edit": "Bearbeiten",
+      "feature": "Hervorheben",
+      "unfeature": "Nicht mehr hervorheben",
+      "unlist": "Aus Listen entfernen",
+      "relist": "Wieder listen",
+      "updated": "Bot aktualisiert",
+      "deleted": "Bot gelöscht",
+      "deleteConfirmTitle": "Bot löschen?",
+      "deleteConfirmDescription": "Dadurch wird „{title}“ endgültig gelöscht. Das kann nicht rückgängig gemacht werden."
     }
   },
   "search": {
@@ -896,6 +914,134 @@
     "noWorkflowsDescription": "Workflows sind Prompts, die in einer Sequenz mit anderen Prompts verbunden sind. Erstellen Sie einen Prompt und fügen Sie Verbindungen hinzu, um einen Workflow zu erstellen.",
     "browsePrompts": "Prompts durchsuchen"
   },
+  "bots": {
+    "description": "Fertige KI-Agenten-Bots mit Anweisungen, Routinen und Skills. Installiere sie auf OpenClaw, Hermes Agent oder Grok Bot.",
+    "count": "{count, plural, one {# Bot} other {# Bots}}",
+    "allPlatforms": "Alle",
+    "noBots": "Für diese Plattform gibt es noch keine Bots.",
+    "scheduledCount": "{count, plural, one {# geplante Routine} other {# geplante Routinen}}",
+    "eventCount": "{count, plural, one {# Ereignis-Trigger} other {# Ereignis-Trigger}}",
+    "backToBots": "Alle Bots",
+    "instructions": "Anweisungen",
+    "routines": "Routinen",
+    "noRoutines": "Dieser Bot hat keine Routinen.",
+    "scheduled": "Geplant",
+    "eventTriggered": "Ereignisgesteuert",
+    "schedule": "Zeitplan",
+    "trigger": "Auslöser",
+    "skills": "Skills",
+    "connectors": "Benötigte Konnektoren",
+    "install": "Installieren",
+    "installOn": "Auf {platform} installieren",
+    "installLinkComingSoon": "Installationslink folgt in Kürze",
+    "hermesCommandHint": "Installiere den Bot mit einem Befehl als Skill:",
+    "copyCommand": "Befehl kopieren",
+    "installPromptHint": "Füge diesen Prompt in deinen Agenten ein. Er ruft die Bot-Definition ab und richtet Anweisungen, Routinen und Skills ein.",
+    "installPromptFallbackHint": "Oder füge diesen Prompt in Grok Bot ein, um den Bot selbst zu erstellen:",
+    "installPromptPlatformFallbackHint": "Oder füge diesen Prompt in {platform} ein, um den Bot selbst zu erstellen:",
+    "copyInstallPrompt": "Installations-Prompt kopieren",
+    "machineReadable": "Maschinenlesbar",
+    "create": "Neuer Bot",
+    "edit": "Bearbeiten",
+    "private": "Privat",
+    "unlisted": "Nicht gelistet",
+    "form": {
+      "createTitle": "Bot erstellen",
+      "editTitle": "Bot bearbeiten",
+      "name": "Name",
+      "namePlaceholder": "z. B. Daily-Standup-Berichterstatter",
+      "platform": "Plattform",
+      "platforms": "Plattformen",
+      "platformsHint": "Wähle alle Plattformen, auf denen dieser Bot funktioniert.",
+      "platformsRequired": "Wähle mindestens eine Plattform aus.",
+      "appearance": "Symbol und Farbe",
+      "changeAppearance": "Ändern",
+      "icon": "Symbol",
+      "color": "Farbe",
+      "defaultColor": "Standard",
+      "resetAppearance": "Auf Standard zurücksetzen",
+      "description": "Kurzbeschreibung",
+      "descriptionPlaceholder": "Was macht dieser Bot?",
+      "installUrl": "Installations-URL",
+      "installUrlHint": "Optional. Ein Ein-Klick-Installationslink, zum Beispiel der Teilen-Link deiner Grok-Bot-Vorlage.",
+      "instructionsHint": "Der System-Prompt oder die dauerhaften Anweisungen für den Agenten.",
+      "instructionsPlaceholder": "Du bist ein hilfreicher Assistent, der…",
+      "routinesHint": "Geplante oder ereignisgesteuerte Aufgaben, die der Bot ausführt.",
+      "routineName": "Name der Routine",
+      "cronPlaceholder": "Cron, z. B. 0 8 * * *",
+      "eventPlaceholder": "Ereignis, z. B. Wenn ein neues Issue eröffnet wird",
+      "triggerLabelPlaceholder": "Lesbarer Zeitplan (optional), z. B. Jeden Tag um 08:00",
+      "routinePromptPlaceholder": "Was soll der Bot tun, wenn diese Routine läuft?",
+      "addRoutine": "Routine hinzufügen",
+      "skillsHint": "Skills, die der Bot nutzt. Gib eine Installationsquelle an, falls vorhanden.",
+      "skillName": "Skill-Name",
+      "skillDescription": "Was er macht",
+      "skillSourcePlaceholder": "Installationsquelle (optional)",
+      "addSkill": "Skill hinzufügen",
+      "connectorsPlaceholder": "z. B. GitHub, Slack, Telegram",
+      "connectorsHint": "Konten oder Dienste, die der Nutzer verbinden muss, durch Kommas getrennt.",
+      "remove": "Entfernen",
+      "submit": "Bot erstellen",
+      "save": "Bot speichern",
+      "created": "Bot erstellt",
+      "updated": "Bot aktualisiert"
+    },
+    "colors": {
+      "slate": "Schiefer",
+      "red": "Rot",
+      "orange": "Orange",
+      "amber": "Bernstein",
+      "lime": "Limette",
+      "emerald": "Smaragd",
+      "teal": "Petrol",
+      "sky": "Himmelblau",
+      "blue": "Blau",
+      "indigo": "Indigo",
+      "violet": "Violett",
+      "pink": "Pink"
+    },
+    "icons": {
+      "bot": "Bot",
+      "sparkles": "Funkeln",
+      "rocket": "Rakete",
+      "brain": "Gehirn",
+      "zap": "Blitz",
+      "mail": "E-Mail",
+      "inbox": "Posteingang",
+      "message-square": "Nachricht",
+      "bell": "Glocke",
+      "calendar": "Kalender",
+      "clock": "Uhr",
+      "newspaper": "Zeitung",
+      "megaphone": "Megafon",
+      "search": "Suche",
+      "radar": "Radar",
+      "globe": "Globus",
+      "plane": "Flugzeug",
+      "receipt": "Beleg",
+      "wallet": "Geldbörse",
+      "dollar-sign": "Dollar",
+      "chart": "Diagramm",
+      "briefcase": "Aktentasche",
+      "shopping-cart": "Einkaufswagen",
+      "code": "Code",
+      "terminal": "Terminal",
+      "git-branch": "Git-Branch",
+      "bug": "Bug",
+      "shield": "Schild",
+      "book-open": "Buch",
+      "graduation-cap": "Doktorhut",
+      "lightbulb": "Glühbirne",
+      "wrench": "Schraubenschlüssel",
+      "palette": "Palette",
+      "camera": "Kamera",
+      "music": "Musik",
+      "heart": "Herz",
+      "coffee": "Kaffee"
+    },
+    "latestBots": "Neueste Bots",
+    "viewAll": "Alle anzeigen"
+  },
   "collection": {
     "title": "Meine Sammlung",
     "description": "Prompts, die Sie für später gespeichert haben",
@@ -917,8 +1063,8 @@
   },
   "homepage": {
     "heroTitle": "Die freie soziale Plattform für",
-    "heroSubtitle": "KI-Prompts",
-    "heroDescription": "Prompts sind die Grundlage aller generativen KI. Teilen, entdecken und sammeln Sie sie aus der Community. Kostenlos und Open Source — selbst hosten mit vollständiger Privatsphäre.",
+    "heroSubtitle": "KI-Agenten",
+    "heroDescription": "Prompts, Skills, Workflows und Bots: alles, was Ihre Agenten brauchen, an einem Ort. Teilen, entdecken und installieren Sie aus der Community. Kostenlos und Open Source, selbst hosten mit vollständiger Privatsphäre.",
     "heroFeature1": "Kostenlos & Open Source",
     "heroFeature2": "Selbst hosten für Privatsphäre",
     "heroFeature3": "Für Teams & Organisationen",
@@ -1251,7 +1397,7 @@
     "interactiveBanner": {
       "badge": "Interaktive Version Verfügbar",
       "title": "Möchten Sie ein detaillierteres und interaktives Erlebnis?",
-      "description": "Tauchen Sie tiefer ein mit unserem umfassenden interaktiven Leitfaden mit 28 Kapiteln, praktischen Übungen und Beispielen aus der Praxis.",
+      "description": "Tauchen Sie tiefer ein mit unserem umfassenden interaktiven Leitfaden mit 29 Kapiteln, praktischen Übungen und Beispielen aus der Praxis.",
       "cta": "Das interaktive Buch lesen"
     },
     "generalTips": {
@@ -1720,8 +1866,8 @@
     "title": "Das Interaktive Buch des Promptings",
     "donate": "Projekt unterstützen",
     "subtitle": "Ein Interaktiver Leitfaden zur Erstellung Klarer und Effektiver Prompts",
-    "metaTitle": "Das Interaktive Buch des Promptings | Kostenloser Online-Leitfaden für KI-Prompt-Engineering",
-    "metaDescription": "Meistern Sie KI-Prompt-Engineering mit diesem kostenlosen, interaktiven Leitfaden. Lernen Sie ChatGPT-Prompts, Chain-of-Thought-Reasoning, Few-Shot-Learning und fortgeschrittene Techniken. 28+ Kapitel mit echten Beispielen.",
+    "metaTitle": "Prompt-Engineering-Leitfaden: Das Interaktive Buch des Promptings",
+    "metaDescription": "Meistern Sie KI-Prompt-Engineering mit diesem kostenlosen, interaktiven Leitfaden. Lernen Sie ChatGPT-Prompts, Chain-of-Thought-Reasoning, Few-Shot-Learning und fortgeschrittene Techniken. 29+ Kapitel mit echten Beispielen.",
     "interactiveGuideBy": "Ein Interaktiver Leitfaden von",
     "authorIntro": "Hallo, ich bin <author>Fatih Kadir Akın</author>, der Kurator des beliebten <repoLink>Awesome ChatGPT Prompts</repoLink>-Repositories auf GitHub und von <siteName>prompts.chat</siteName>.",
     "bookDescription": "In diesem umfassenden und interaktiven Leitfaden entdecken Sie Expertenstrategien zur Erstellung überzeugender KI-Prompts, die ansprechende und effektive Gespräche fördern. Vom Verständnis der Funktionsweise von KI-Modellen bis zur Beherrschung fortgeschrittener Techniken wie Prompt-Chaining und agentische Systeme bietet Ihnen dieses Buch die Werkzeuge, die Sie benötigen, um Ihre KI-Interaktionen auf die nächste Stufe zu heben.",
@@ -1743,7 +1889,7 @@
       "part4": "Teil 4: Best Practices",
       "part5": "Teil 5: Anwendungsfälle",
       "part6": "Teil 6: Fazit",
-      "chapters": "28 Interaktive Kapitel"
+      "chapters": "29 Interaktive Kapitel"
     },
     "startReading": "Jetzt Lesen",
     "skipToChapter1": "Zu Kapitel 1 springen",
@@ -1813,7 +1959,8 @@
       "23-research-analysis": "Forschung & Analyse",
       "24-future-of-prompting": "Die Zukunft des Promptings",
       "27-tools-mcp-connectors": "Werkzeuge, MCP und Konnektoren",
-      "26-the-harnesses": "Die Harnesses"
+      "26-the-harnesses": "Die Harnesses",
+      "28-persistent-bots": "Always-On-Bots: Agenten, die weiterarbeiten"
     },
     "chapterDescriptions": {
       "00a-preface": "Eine persönliche Notiz vom Autor",
@@ -1846,7 +1993,8 @@
       "23-research-analysis": "Datenanalyse und Forschungsaufgaben",
       "24-future-of-prompting": "Aufkommende Trends und Ausblick",
       "27-tools-mcp-connectors": "Wie Werkzeuge, MCP und Konnektoren KI Zugriff auf Daten und Aktionen geben",
-      "26-the-harnesses": "Wie Harnesses Modelle, Prompts, Skills und Werkzeuge verbinden"
+      "26-the-harnesses": "Wie Harnesses Modelle, Prompts, Skills und Werkzeuge verbinden",
+      "28-persistent-bots": "Wie persistente Bots Gedächtnis, Routinen und Freigaben nutzen, um weiterzuarbeiten"
     },
     "interactive": {
       "tryIt": "Selbst Ausprobieren",
@@ -2253,6 +2401,115 @@
       "nodeJs": "Node.js 24.x",
       "postgresql": "PostgreSQL database",
       "npm": "npm"
+    }
+  },
+  "seo": {
+    "page": "Seite {page}",
+    "home": {
+      "title": "prompts.chat - Kostenlose KI-Prompts: ChatGPT, Claude, Gemini",
+      "description": "Kostenlose Open-Source-Bibliothek für KI-Prompts, ehemals Awesome ChatGPT Prompts. Tausende Prompts für ChatGPT, Claude, Gemini & Co. entdecken, kopieren und teilen."
+    },
+    "prompts": {
+      "title": "Prompt-Bibliothek: Kostenlose ChatGPT- & KI-Prompts",
+      "description": "Entdecken Sie die neuesten kostenlosen Prompts der prompts.chat-Community. Nach Kategorie, Tag oder Typ filtern und direkt in ChatGPT, Claude, Gemini & Co. einfügen.",
+      "searchTitle": "Suchergebnisse für „{query}“"
+    },
+    "discover": {
+      "title": "Die besten KI-Prompts entdecken: Empfohlen & im Trend",
+      "description": "Empfohlene, angesagte und bestbewertete KI-Prompts, ausgewählt von der prompts.chat-Community – täglich neue Prompts für ChatGPT, Claude, Gemini, Bilder und Videos.",
+      "heading": "KI-Prompts entdecken"
+    },
+    "categories": {
+      "title": "KI-Prompt-Kategorien: Coding, Texten, Bilder & mehr",
+      "description": "Kostenlose KI-Prompts nach Kategorie: Programmieren, Texten, Marketing, Business, Bildung, Bild- und Videogenerierung – für jede Aufgabe der passende Prompt.",
+      "heading": "Prompt-Kategorien"
+    },
+    "category": {
+      "title": "{name}-Prompts für ChatGPT, Claude & Gemini",
+      "description": "{description} Entdecken Sie {count} kostenlose {name}-Prompts für ChatGPT, Claude, Gemini und andere KI-Tools.",
+      "fallbackDescription": "Entdecken Sie {count} kostenlose {name}-Prompts für ChatGPT, Claude, Gemini und andere KI-Tools. Prompts der prompts.chat-Community kopieren, anpassen und teilen.",
+      "heading": "{name}-Prompts"
+    },
+    "tags": {
+      "title": "KI-Prompts nach Tags",
+      "description": "Kostenlose KI-Prompts nach Tags – von Python und SQL über Midjourney bis Marketing und Karriere. ChatGPT-, Claude-, Gemini- und Bild-Prompts zu jedem Thema."
+    },
+    "tag": {
+      "title": "{name}-Prompts",
+      "description": "Entdecken Sie {count} kostenlose KI-Prompts mit dem Tag {name}. Nutzen Sie sie mit ChatGPT, Claude, Gemini & Co. oder teilen Sie eigene auf prompts.chat.",
+      "heading": "{name}-Prompts"
+    },
+    "skills": {
+      "title": "Agent Skills: SKILL.md für Claude Code & KI-Agenten",
+      "description": "Kostenlose Open-Source-Agent-Skills (SKILL.md-Dateien) für Claude Code, Codex, Cursor und andere KI-Agenten – geteilt und verbessert von der prompts.chat-Community.",
+      "heading": "Agent Skills"
+    },
+    "workflows": {
+      "title": "KI-Prompt-Workflows & Prompt-Ketten",
+      "description": "Mehrstufige KI-Workflows und Prompt-Ketten, bei denen jeder Schritt den nächsten speist. Bewährte Abläufe für ChatGPT, Claude sowie Bild- und Videogenerierung.",
+      "heading": "Prompt-Workflows"
+    },
+    "bots": {
+      "title": "Fertige KI-Agenten-Bots für OpenClaw, Hermes und Grok",
+      "description": "Entdecke fertige KI-Agenten-Bots mit Anweisungen, geplanten Routinen und Skills und installiere sie mit einem Klick auf OpenClaw, Hermes Agent oder Grok Bot.",
+      "heading": "Bots"
+    },
+    "taste": {
+      "title": "Coding-Stilprofile (taste.md) für KI-Coding-Agenten",
+      "description": "Entdecken Sie taste.md-Profile, die KI-Coding-Agenten wie Claude Code, Cursor und Codex Ihre bevorzugten Konventionen, Frameworks und Ihren Coding-Stil beibringen.",
+      "heading": "Coding-Stilprofile"
+    },
+    "promptmasters": {
+      "title": "Promptmasters: Die besten Ersteller von KI-Prompts",
+      "description": "Lernen Sie die besten Prompt-Engineers auf prompts.chat kennen – gerankt nach Stimmen für ihre KI-Prompts. Bestenlisten für alle Zeiten, den Monat und die Woche."
+    },
+    "developers": {
+      "title": "Entwickler-Tools: Prompt-Verbesserer, Tokenizer & Embeds",
+      "description": "Kostenlose Entwickler-Tools von prompts.chat: Prompts mit KI verbessern, Tokens zählen, einbettbare Widgets gestalten und Prompts im IDE-artigen Editor bauen."
+    },
+    "howToWrite": {
+      "title": "Effektive KI-Prompts schreiben: Tipps & Beispiele",
+      "description": "So schreiben Sie effektive KI-Prompts: praktische Tipps, Beispiele und Best Practices für Rollen-Prompts, Variablen, strukturierte Ausgaben und vieles mehr."
+    },
+    "kids": {
+      "title": "Prompting für Kinder: Lerne, mit KI zu sprechen",
+      "description": "Ein kostenloses Lernspiel, mit dem Kinder lernen, mit KI zu sprechen. Begleite den Roboter Promi durch das Prompt-Land und lerne, tolle Prompts zu schreiben."
+    },
+    "support": {
+      "title": "Support & FAQ"
+    },
+    "apiDocs": {
+      "title": "Prompts-API & MCP-Server: Dokumentation",
+      "description": "KI-Prompts programmatisch suchen und abrufen – mit der kostenlosen API und dem MCP-Server von prompts.chat. Endpunkte, Parameter und Beispiele zum Kopieren."
+    },
+    "selfHosting": {
+      "title": "Self-Hosting-Anleitung",
+      "description": "Betreiben Sie Ihre eigene private prompts.chat-Instanz mit eigenem Branding, Themes und eigener Authentifizierung. Kostenlos, Open Source und bereit für Teams."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "Wie prompts.chat Ihre Daten erhebt, verwendet und schützt."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "description": "Die Bedingungen, die für die Nutzung von prompts.chat gelten."
+    },
+    "profile": {
+      "title": "{name} (@{username}) - KI-Prompts",
+      "description": "Entdecken Sie {count} KI-Prompts von {name} (@{username}) auf prompts.chat, der kostenlosen Open-Source-Bibliothek für Prompts."
+    },
+    "bookChapter": {
+      "title": "{chapter} - Prompt-Engineering-Leitfaden"
+    },
+    "promptTypes": {
+      "TEXT": "ChatGPT-Prompt",
+      "STRUCTURED": "Strukturierter KI-Prompt",
+      "IMAGE": "KI-Bild-Prompt",
+      "VIDEO": "KI-Video-Prompt",
+      "AUDIO": "KI-Audio-Prompt",
+      "SKILL": "Agent Skill",
+      "TASTE": "Coding-Stilprofil",
+      "model": "{model}-Prompt"
     }
   }
 }
